@@ -8,10 +8,10 @@ export function Hero() {
     <section className="container mx-auto px-4 py-20 text-center">
       <div className="mx-auto max-w-4xl">
         <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
-          Smart Compliance Automation &amp; Monitoring
+          Your AI Copilot for Execution &amp; Coordination
         </h1>
         <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-          CoperVise prevents regulatory slip-ups, auto-tracks obligations, and offers intelligent oversight using AI, workflows, and smart calendars.
+          CoperVise streamlines your workflow with an AI assistant, automated meeting summaries, and intelligent daily briefings, empowering you to focus on what truly matters.
         </p>
         <Button asChild size="lg" className="mt-8">
           <Link href="/register">
