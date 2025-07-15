@@ -14,9 +14,9 @@ export default function LoginPage() {
         <Image
           src="https://placehold.co/960x1080.png"
           alt="CoperVise branding"
-          width={960}
-          height={1080}
-          className="h-full w-full object-cover"
+          layout="fill"
+          objectFit="cover"
+          className="absolute inset-0 h-full w-full"
           data-ai-hint="gradient abstract"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600/70 to-teal-500/70"></div>
