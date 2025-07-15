@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '@/components/logo';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const navLinks = [
   {
@@ -92,6 +93,7 @@ export function Header() {
           <Button asChild>
             <Link href="/signup">Register</Link>
           </Button>
+          <ThemeToggle />
         </div>
 
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -121,12 +123,17 @@ export function Header() {
                 ))}
               </nav>
               <div className="mt-auto flex flex-col gap-2 border-t pt-4">
-                <Button variant="ghost" asChild>
-                  <Link href="/login">Log In</Link>
-                </Button>
-                <Button asChild>
-                  <Link href="/signup">Register</Link>
-                </Button>
+                 <div className="flex justify-between items-center">
+                    <div>
+                        <Button variant="ghost" asChild>
+                            <Link href="/login">Log In</Link>
+                        </Button>
+                        <Button asChild>
+                            <Link href="/signup">Register</Link>
+                        </Button>
+                    </div>
+                    <ThemeToggle />
+                </div>
               </div>
             </div>
           </SheetContent>
