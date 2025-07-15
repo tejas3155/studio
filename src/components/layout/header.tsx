@@ -9,8 +9,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '@/components/logo';
@@ -32,13 +30,13 @@ const navLinks = [
     title: 'Solutions',
     href: '#',
     subLinks: [
-      { title: 'For Business', href: '#' },
-      { title: 'For Corporate', href: '#' },
-      { title: 'For Founders & CXOs', href: '#' },
-      { title: 'For HR & Admin Teams', href: '#' },
-      { title: 'For Universities & Colleges', href: '#' },
-      { title: 'For School Institutions', href: '#' },
-      { title: 'For Government & Compliance', href: '#' },
+      { title: 'For Business', href: '#'},
+      { title: 'For Corporate', href: '#'},
+      { title: 'For Founders & CXOs', href: '#'},
+      { title: 'For HR & Admin Teams', href: '#'},
+      { title: 'For Universities & Colleges', href: '#'},
+      { title: 'For School Institutions', href: '#'},
+      { title: 'For Government & Compliance', href: '#'},
     ],
   },
   { title: 'Pricing', href: '#' },
@@ -58,7 +56,6 @@ function NavLink({ title, href, subLinks }: { title: string; href: string; subLi
             <DropdownMenuItem key={link.title} asChild>
               <Link href={link.href} className="flex flex-col items-start">
                 <div className="font-medium">{link.title}</div>
-                {link.description && <p className="text-xs text-muted-foreground whitespace-normal">{link.description}</p>}
               </Link>
             </DropdownMenuItem>
           ))}
@@ -93,7 +90,7 @@ export function Header() {
             <Link href="/login">Log In</Link>
           </Button>
           <Button asChild>
-            <Link href="/register">Register</Link>
+            <Link href="/register">Get Started Free</Link>
           </Button>
         </div>
 
@@ -128,7 +125,7 @@ export function Header() {
                   <Link href="/login">Log In</Link>
                 </Button>
                 <Button asChild>
-                  <Link href="/register">Register</Link>
+                  <Link href="/register">Get Started Free</Link>
                 </Button>
               </div>
             </div>
