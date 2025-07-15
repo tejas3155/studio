@@ -1,4 +1,4 @@
-import { Bot, CalendarCheck, LayoutDashboard, Mic, ShieldCheck, Star } from 'lucide-react';
+import { Bot, CalendarCheck, LayoutDashboard, Mic, ShieldCheck, Star, Vault } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const blocks = [
@@ -23,9 +23,9 @@ const blocks = [
     description: 'Our AI analyzes and prioritizes important events, ensuring executives focus on what matters most.'
   },
   {
-    icon: LayoutDashboard,
-    title: 'Dynamic Dashboard',
-    description: 'See everything that matters in one unified view, from tasks and meetings to team progress.'
+    icon: Vault,
+    title: 'Documents Vault',
+    description: 'CoperVise values your executive documents. They can be accessed only by you.'
   },
   {
     icon: ShieldCheck,
