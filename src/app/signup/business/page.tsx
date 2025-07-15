@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
@@ -12,10 +13,11 @@ export default function BusinessSignupPage() {
     <div className="flex min-h-screen w-full bg-background">
       <div className="relative hidden w-1/2 lg:block">
         <Image
-          src="/images/copervise-brand-image.png"
+          src="https://placehold.co/900x1200.png"
           alt="CoperVise brand image"
           layout="fill"
           objectFit="cover"
+          data-ai-hint="futuristic gradient"
         />
       </div>
       <div className="flex w-full items-center justify-center p-8 lg:w-1/2">
