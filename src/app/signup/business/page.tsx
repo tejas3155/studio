@@ -1,4 +1,6 @@
+
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -6,11 +8,18 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { ArrowLeft, User, Mail, Lock } from 'lucide-react';
 import { Logo } from '@/components/logo';
 
-
 export default function BusinessSignupPage() {
   return (
     <div className="flex min-h-screen w-full">
-       <div className="relative hidden w-1/2 auth-bg-image lg:block">
+      <div className="relative hidden w-1/2 lg:block">
+        <Image
+          src="https://placehold.co/960x1080.png"
+          alt="CoperVise branding"
+          width={960}
+          height={1080}
+          className="absolute inset-0 h-full w-full object-cover"
+          data-ai-hint="gradient abstract"
+        />
       </div>
       <div className="flex w-full items-center justify-center bg-card p-8 lg:w-1/2">
         <div className="w-full max-w-md">
@@ -20,13 +29,13 @@ export default function BusinessSignupPage() {
                 Back to Roles
                 </Link>
             </Button>
-            <div className="mb-8 lg:hidden">
+            <div className="mb-8 flex justify-center lg:hidden">
               <Logo />
             </div>
-          <div className="text-left">
-            <h1 className="font-headline text-3xl font-bold text-foreground">Create a Business Account</h1>
+          <div className="text-center">
+            <h1 className="font-headline text-3xl font-bold text-foreground">Sign Up for CoperVise</h1>
             <p className="mt-2 text-muted-foreground">
-              CoperVise helps you streamline operations, track key projects, and ensure team alignment effortlessly.
+              Streamline your business operations, track key projects, and ensure team alignment effortlessly.
             </p>
           </div>
 
@@ -56,20 +65,20 @@ export default function BusinessSignupPage() {
                 <Label>Choose your role</Label>
                 <RadioGroup defaultValue="coordinator" className="flex gap-6">
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="executive" id="r1" className="text-teal-500 border-muted-foreground"/>
+                    <RadioGroupItem value="executive" id="r1" className="text-primary border-muted-foreground"/>
                     <Label htmlFor="r1" className="cursor-pointer font-medium text-foreground">Executive</Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="coordinator" id="r2" className="text-teal-500 border-muted-foreground"/>
+                    <RadioGroupItem value="coordinator" id="r2" className="text-primary border-muted-foreground"/>
                     <Label htmlFor="r2" className="cursor-pointer font-medium text-foreground">Coordinator</Label>
                   </div>
                 </RadioGroup>
               </div>
-              <Button type="submit" className="w-full bg-teal-500 hover:bg-teal-600 text-white" size="lg">Create Account</Button>
+              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" size="lg">Create Account</Button>
             </form>
             <p className="mt-6 text-center text-sm text-muted-foreground">
               Already have an account?{' '}
-              <Link href="/login" className="font-medium text-teal-500 hover:underline">
+              <Link href="/login" className="font-medium text-primary hover:underline">
                 Login
               </Link>
             </p>
