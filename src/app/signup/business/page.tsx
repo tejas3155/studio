@@ -10,31 +10,23 @@ import { ArrowLeft } from 'lucide-react';
 export default function BusinessSignupPage() {
   return (
     <div className="flex min-h-screen w-full bg-background">
-      <div className="relative hidden w-1/2 flex-col justify-between bg-zinc-900 p-8 text-white lg:flex">
+      <div className="relative hidden w-1/2 flex-col justify-between bg-gradient-to-br from-primary via-purple-700 to-accent p-8 text-white lg:flex">
         <Logo className="z-10" />
         <div className="z-10 mt-auto">
           <h2 className="font-headline text-4xl font-bold">
             The Ultimate Co-pilot for Your Business
           </h2>
-          <p className="mt-4 text-lg text-zinc-300">
+          <p className="mt-4 text-lg text-purple-200">
             CoperVise transforms your operations, providing clarity and control over every task, meeting, and deadline.
           </p>
         </div>
-        <Image
-          src="https://placehold.co/1200x1800.png"
-          alt="Business professionals in a meeting"
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 opacity-20"
-          data-ai-hint="business meeting professional"
-        />
       </div>
       <div className="flex w-full items-center justify-center p-8 lg:w-1/2">
         <div className="w-full max-w-md">
-          <Button variant="ghost" className="absolute left-4 top-4" asChild>
+          <Button variant="ghost" className="absolute left-4 top-4 md:left-auto md:right-4" asChild>
             <Link href="/signup">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back
+              Back to Roles
             </Link>
           </Button>
 
