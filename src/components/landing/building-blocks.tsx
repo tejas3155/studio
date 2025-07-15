@@ -1,36 +1,36 @@
-import { Terminal, Bot, Zap, Files, Share2, Search } from 'lucide-react';
+import { FileCheck, Bot, Zap, Users, CalendarClock, Mail } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const blocks = [
   {
     icon: Bot,
-    title: 'AI Assistant',
-    description: 'Leverage AI to summarize, translate, and generate content effortlessly.'
+    title: 'AI for Compliance',
+    description: 'Your built-in assistant for NAAC, ISO, audits and other compliance events.'
   },
   {
-    icon: Files,
-    title: 'Wikis',
-    description: 'Centralize knowledge, documents, and standard operating procedures.'
+    icon: FileCheck,
+    title: 'Coordinator-Driven Workflows',
+    description: 'Manage tasks with executive summaries. No more chasing for updates.'
   },
   {
-    icon: Terminal,
-    title: 'Projects',
-    description: 'Manage complex projects without the chaos. One tool for all your tasks.'
+    icon: Users,
+    title: 'Institutional Hierarchy',
+    description: 'Model your organization with departments, roles, and responsibilities.'
   },
   {
-    icon: Share2,
-    title: 'Docs',
-    description: 'Simple, powerful, and collaborative documents for your team.'
+    icon: CalendarClock,
+    title: 'Smart Compliance Calendar',
+    description: 'Auto-linked obligations and deadlines to keep you on track.'
   },
   {
     icon: Zap,
-    title: 'Automation',
-    description: 'Connect CoperVise to your favorite tools and automate repetitive tasks.'
+    title: 'Framework-Ready',
+    description: 'Plug-and-play templates for NAAC, NBA, ISO, NIRF, and more.'
   },
   {
-    icon: Search,
-    title: 'Universal Search',
-    description: 'Find anything instantly across your entire workspace.'
+    icon: Mail,
+    title: 'AI-Generated Reminders',
+    description: 'Automate follow-up emails and notifications to ensure tasks get done.'
   }
 ];
 
@@ -40,10 +40,10 @@ export function BuildingBlocks() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Powerful building blocks
+            A Platform for Institutional Excellence
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Customize CoperVise to work the way you do. Just drag and drop.
+            CoperVise integrates the critical functions that Notion, Airtable, and traditional ERPs can't handle together.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

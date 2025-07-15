@@ -2,16 +2,16 @@ import Image from 'next/image';
 
 const features = [
   {
-    title: 'AI-Powered Assistance',
-    description: 'Let CoperVise handle the mundane. Summarize long documents, draft emails, and get intelligent suggestions to boost your productivity. Your AI partner for smarter work.',
+    title: 'AI-Powered Compliance Automation',
+    description: "CoperVise's AI assistant is tailor-made for institutional compliance events like NAAC, ISO audits, and more. Automatically generate reports, track progress, and ensure you're always audit-ready.",
     image: 'https://placehold.co/1024x768.png',
-    aiHint: 'artificial intelligence'
+    aiHint: 'artificial intelligence compliance'
   },
   {
-    title: 'Consolidate your tools. Cut costs.',
-    description: 'Tired of juggling apps? CoperVise brings your wikis, docs, and projects into one unified space. Simplify your workflow and reduce your software spend.',
+    title: 'Seamless Coordination, Powerful Execution',
+    description: 'Move beyond chaotic spreadsheets and email chains. Our coordinator-driven workflows and executive summaries provide crystal-clear visibility into every task, from assignment to completion.',
     image: 'https://placehold.co/1024x768.png',
-    aiHint: 'team collaboration'
+    aiHint: 'team workflow chart'
   }
 ];
 
