@@ -8,7 +8,7 @@ import { WhoIsItFor } from '@/components/landing/who-is-it-for';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-secondary">
       <Header />
       <main className="flex-grow">
         <Hero />
