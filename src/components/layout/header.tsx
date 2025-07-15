@@ -90,7 +90,7 @@ export function Header() {
             <Link href="/signup">Log In</Link>
           </Button>
           <Button asChild>
-            <Link href="/signup">Get Started Free</Link>
+            <Link href="/signup">Register</Link>
           </Button>
         </div>
 
@@ -125,7 +125,7 @@ export function Header() {
                   <Link href="/signup">Log In</Link>
                 </Button>
                 <Button asChild>
-                  <Link href="/signup">Get Started Free</Link>
+                  <Link href="/signup">Register</Link>
                 </Button>
               </div>
             </div>
