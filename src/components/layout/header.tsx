@@ -9,6 +9,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '@/components/logo';
@@ -18,25 +20,31 @@ const navLinks = [
     title: 'Product',
     href: '#',
     subLinks: [
-      { title: 'AI Automation', href: '#' },
-      { title: 'Smart Calendar', href: '#' },
-      { title: 'Risk Heatmaps', href: '#' },
-      { title: 'Audit Trails', href: '#' },
+      { title: 'AI Assistant', href: '#' },
+      { title: 'AI-Powered Meetings', href: '#' },
+      { title: 'AI Daily Briefing', href: '#' },
+      { title: 'AI Event Prioritization', href: '#' },
+      { title: 'Documents Vault', href: '#' },
+      { title: 'Institutional Frameworks', href: '#' },
     ],
   },
   {
     title: 'Solutions',
     href: '#',
     subLinks: [
-      { title: 'For Legal Teams', href: '#' },
-      { title: 'For Founders', href: '#' },
-      { title: 'For Startups', href: '#' },
+      { title: 'For Business', description: 'Streamline operations, track key projects, and ensure team alignment effortlessly.', href: '#' },
+      { title: 'For Corporate', description: 'Manage cross-departmental workflows and maintain operational excellence at scale.', href: '#' },
+      { title: 'For Founders & CXOs', description: 'Avoid costly slip-ups with a clear view of all operations and compliance obligations.', href: '#' },
+      { title: 'For HR & Admin Teams', description: 'Monitor labor laws, internal policies, and SOPs with a clear, auditable trail.', href: '#' },
+      { title: 'For Universities & Colleges', description: 'Track NAAC, NBA, faculty submissions, and internal tasks seamlessly.', href: '#' },
+      { title: 'For School Institutions', description: 'Manage administrative workflows, compliance, and reporting with ease.', href: '#' },
+      { title: 'For Government & Compliance', description: '', href: '#' },
     ],
   },
   { title: 'Pricing', href: '#' },
 ];
 
-function NavLink({ title, href, subLinks }: { title: string; href: string; subLinks?: { title: string; href: string }[] }) {
+function NavLink({ title, href, subLinks }: { title: string; href: string; subLinks?: { title: string; href: string; description?: string }[] }) {
   if (subLinks) {
     return (
       <DropdownMenu>
@@ -45,10 +53,13 @@ function NavLink({ title, href, subLinks }: { title: string; href: string; subLi
             {title} <ChevronDown className="h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="start">
+        <DropdownMenuContent align="start" className="w-64">
           {subLinks.map((link) => (
             <DropdownMenuItem key={link.title} asChild>
-              <Link href={link.href}>{link.title}</Link>
+              <Link href={link.href} className="flex flex-col items-start">
+                <div className="font-medium">{link.title}</div>
+                {link.description && <p className="text-xs text-muted-foreground whitespace-normal">{link.description}</p>}
+              </Link>
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>
@@ -82,7 +93,7 @@ export function Header() {
             <Link href="/login">Log In</Link>
           </Button>
           <Button asChild>
-            <Link href="/register">Get Started Free <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            <Link href="/register">Register</Link>
           </Button>
         </div>
 
@@ -117,7 +128,7 @@ export function Header() {
                   <Link href="/login">Log In</Link>
                 </Button>
                 <Button asChild>
-                  <Link href="/register">Get Started Free <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                  <Link href="/register">Register</Link>
                 </Button>
               </div>
             </div>
