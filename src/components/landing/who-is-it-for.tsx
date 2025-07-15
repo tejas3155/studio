@@ -1,7 +1,27 @@
-import { School, University, Shield, Crown, UserCheck, Briefcase } from 'lucide-react';
+import { School, University, Shield, Crown, UserCheck, Briefcase, Building } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const audiences = [
+  {
+    icon: Briefcase,
+    title: 'Business',
+    description: 'Streamline operations, track key projects, and ensure team alignment effortlessly.'
+  },
+  {
+    icon: Building,
+    title: 'Corporate',
+    description: 'Manage cross-departmental workflows and maintain operational excellence at scale.'
+  },
+  {
+    icon: Crown,
+    title: 'Founders & CXOs',
+    description: 'Avoid costly slip-ups with a clear view of all operations and compliance obligations.'
+  },
+  {
+    icon: UserCheck,
+    title: 'HR & Admin Teams',
+    description: 'Monitor labor laws, internal policies, and SOPs with a clear, auditable trail.'
+  },
   {
     icon: University,
     title: 'Universities & Colleges',
@@ -14,23 +34,8 @@ const audiences = [
   },
   {
     icon: Shield,
-    title: 'Cybersecurity Managers',
-    description: 'Ensure ISO 27001, NIST, or SOC2 documentation compliance with structured workflows.'
-  },
-  {
-    icon: Crown,
-    title: 'Founders & CXOs',
-    description: 'Avoid costly slip-ups with a clear view of all operations and compliance obligations.'
-  },
-  {
-    icon: UserCheck,
-    title: 'Compliance Officers',
-    description: 'Gain complete visibility and get automated reminders to mitigate risks effectively.'
-  },
-  {
-    icon: Briefcase,
-    title: 'HR & Admin Teams',
-    description: 'Monitor labor laws, internal policies, and SOPs with a clear, auditable trail.'
+    title: 'Government & Compliance',
+    description: 'Oversee policy implementation, manage public records, and ensure regulatory adherence.'
   },
 ]
 
