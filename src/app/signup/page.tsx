@@ -13,7 +13,7 @@ const roles = [
   {
     icon: Building,
     title: 'Corporate',
-    href: '/dashboard/corporate',
+    href: '/signup/corporate',
   },
   {
     icon: Rocket,
