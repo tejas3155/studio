@@ -13,7 +13,7 @@ export default function BusinessSignupPage() {
     <div className="flex min-h-screen w-full bg-background">
       <div className="relative hidden w-1/2 lg:block">
         <Image
-          src="https://placehold.co/900x1200.png"
+          src="/CoperVise Left.png"
           alt="CoperVise brand image"
           layout="fill"
           objectFit="cover"
