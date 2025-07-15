@@ -16,9 +16,6 @@ export default function BusinessSignupPage() {
           <Logo className="text-white" />
         </div>
         <div className="z-10 m-auto flex flex-col items-center text-center">
-            <div className="mb-6 rounded-full bg-white/20 p-4">
-                <Logo className="text-white" />
-            </div>
           <h1 className="font-headline text-5xl font-bold">CoperVise</h1>
           <p className="mt-4 text-2xl text-zinc-200">
             Your AI-Powered Executive Assistant
