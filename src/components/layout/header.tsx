@@ -76,7 +76,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-16 items-center">
         <div className="flex items-center gap-6">
           <Logo />
           <nav className="hidden items-center gap-4 md:flex">
@@ -86,7 +86,7 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="ml-auto hidden items-center gap-2 md:flex">
           <Button variant="ghost" asChild>
             <Link href="/login">Log In</Link>
           </Button>
@@ -95,49 +95,49 @@ export function Header() {
           </Button>
           <ThemeToggle />
         </div>
-
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-6 w-6" />
-              <span className="sr-only">Open menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-full bg-background/95 backdrop-blur">
-             <SheetHeader>
-               <div className="flex items-center justify-between">
-                <Logo />
-                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
-                  <X className="h-6 w-6" />
-                  <span className="sr-only">Close menu</span>
+        
+        <div className="ml-auto md:hidden">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Open menu</span>
                 </Button>
-              </div>
-              <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-            </SheetHeader>
-            <div className="flex flex-col gap-6 p-4">
-              <nav className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <Link key={link.title} href={link.href} className="text-lg font-medium" onClick={() => setIsOpen(false)}>
-                    {link.title}
-                  </Link>
-                ))}
-              </nav>
-              <div className="mt-auto flex flex-col gap-2 border-t pt-4">
-                 <div className="flex justify-between items-center">
-                    <div>
-                        <Button variant="ghost" asChild>
-                            <Link href="/login">Log In</Link>
-                        </Button>
-                        <Button asChild>
-                            <Link href="/signup">Register</Link>
-                        </Button>
-                    </div>
-                    <ThemeToggle />
+            </SheetTrigger>
+            <SheetContent side="right" className="w-full bg-background/95 backdrop-blur">
+                <SheetHeader>
+                <div className="flex items-center justify-between">
+                    <Logo />
+                    <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
+                    <X className="h-6 w-6" />
+                    <span className="sr-only">Close menu</span>
+                    </Button>
                 </div>
-              </div>
-            </div>
-          </SheetContent>
-        </Sheet>
+                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                </SheetHeader>
+                <div className="flex h-full flex-col justify-between p-4">
+                    <nav className="flex flex-col gap-4">
+                        {navLinks.map((link) => (
+                        <Link key={link.title} href={link.href} className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                            {link.title}
+                        </Link>
+                        ))}
+                    </nav>
+                    <div className="flex flex-col gap-2 border-t pt-4">
+                        <div className="flex items-center justify-end gap-2">
+                            <Button variant="ghost" asChild>
+                                <Link href="/login">Log In</Link>
+                            </Button>
+                            <Button asChild>
+                                <Link href="/signup">Register</Link>
+                            </Button>
+                            <ThemeToggle />
+                        </div>
+                    </div>
+                </div>
+            </SheetContent>
+            </Sheet>
+        </div>
       </div>
     </header>
   );
