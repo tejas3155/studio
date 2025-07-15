@@ -28,12 +28,12 @@ const roles = [
   {
     icon: School,
     title: 'Universities',
-    href: '/dashboard/universities',
+    href: '/signup/universities',
   },
   {
     icon: Landmark,
     title: 'Government',
-    href: '/dashboard/government',
+    href: '/signup/government',
   },
 ];
 
