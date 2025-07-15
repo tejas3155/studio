@@ -18,7 +18,7 @@ const roles = [
   {
     icon: Rocket,
     title: 'Founders/Startup',
-    href: '/dashboard/startup',
+    href: '/signup/startup',
   },
   {
     icon: Users,
