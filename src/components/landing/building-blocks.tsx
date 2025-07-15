@@ -48,7 +48,7 @@ export function BuildingBlocks() {
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blocks.map((block) => (
-            <Card key={block.title} className="bg-background">
+            <Card key={block.title} className="bg-background transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
               <CardHeader>
                 <block.icon className="mb-4 h-8 w-8 text-primary" />
                 <CardTitle>{block.title}</CardTitle>

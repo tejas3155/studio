@@ -53,9 +53,9 @@ export function WhoIsItFor() {
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {audiences.map((audience) => (
-            <Card key={audience.title}>
+            <Card key={audience.title} className="transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-1">
               <CardHeader className="flex flex-row items-center gap-4 space-y-0">
-                <audience.icon className="h-8 w-8 text-primary" />
+                <audience.icon className="h-8 w-8 text-accent" />
                 <CardTitle>{audience.title}</CardTitle>
               </CardHeader>
               <CardContent>
