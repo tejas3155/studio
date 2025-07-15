@@ -23,7 +23,7 @@ const roles = [
   {
     icon: Users,
     title: 'HR & Admin Team',
-    href: '/dashboard/hr',
+    href: '/signup/hr',
   },
   {
     icon: School,
