@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -11,7 +12,7 @@ export default function StartupSignupPage() {
   return (
     <div className="flex min-h-screen w-full">
       <div className="relative hidden w-1/2 lg:block">
-        <div className="auth-bg-image absolute inset-0" />
+        <div className="auth-bg-image absolute inset-0"></div>
       </div>
       <div className="flex w-full items-center justify-center bg-card p-8 lg:w-1/2">
         <div className="w-full max-w-md">
@@ -82,7 +83,7 @@ export default function StartupSignupPage() {
               and{' '}
               <Link href="#" className="underline hover:text-foreground">
                 Privacy Policy
-              </e_TAG_NAME>
+              </Link>
               .
             </p>
         </div>
