@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -87,10 +87,10 @@ export function Header() {
 
         <div className="hidden items-center gap-2 md:flex">
           <Button variant="ghost" asChild>
-            <Link href="/login">Log In</Link>
+            <Link href="/dashboard">Log In</Link>
           </Button>
           <Button asChild>
-            <Link href="/register">Get Started Free</Link>
+            <Link href="/dashboard">Get Started Free</Link>
           </Button>
         </div>
 
@@ -122,10 +122,10 @@ export function Header() {
               </nav>
               <div className="mt-auto flex flex-col gap-2 border-t pt-4">
                 <Button variant="ghost" asChild>
-                  <Link href="/login">Log In</Link>
+                  <Link href="/dashboard">Log In</Link>
                 </Button>
                 <Button asChild>
-                  <Link href="/register">Get Started Free</Link>
+                  <Link href="/dashboard">Get Started Free</Link>
                 </Button>
               </div>
             </div>

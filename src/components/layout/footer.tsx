@@ -36,8 +36,8 @@ const footerLinks = {
   'Get Started': [
     { title: 'Request a demo', href: '#' },
     { title: 'Switch from...', href: '#' },
-    { title: 'Log in', href: '/login' },
-    { title: 'Register', href: '/register' },
+    { title: 'Log in', href: '/dashboard' },
+    { title: 'Register', href: '/dashboard' },
   ],
 };
 

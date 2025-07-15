@@ -14,7 +14,7 @@ export function Hero() {
           CoperVise streamlines your workflow with an AI assistant, automated meeting summaries, and intelligent daily briefings, empowering you to focus on what truly matters.
         </p>
         <Button asChild size="lg" className="mt-8">
-          <Link href="/register">
+          <Link href="/dashboard">
             Get Started Free
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
