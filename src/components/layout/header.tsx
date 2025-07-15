@@ -36,7 +36,6 @@ const navLinks = [
       { title: 'For Founders & CXOs', href: '#'},
       { title: 'For HR & Admin Teams', href: '#'},
       { title: 'For Universities & Colleges', href: '#'},
-      { title: 'For School Institutions', href: '#'},
       { title: 'For Government & Compliance', href: '#'},
     ],
   },
@@ -76,7 +75,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
+      <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
           <Logo />
           <nav className="hidden items-center gap-4 md:flex">
@@ -86,7 +85,7 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="ml-auto hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
           <Button variant="ghost" asChild>
             <Link href="/login">Log In</Link>
           </Button>
@@ -96,7 +95,7 @@ export function Header() {
           <ThemeToggle />
         </div>
         
-        <div className="ml-auto md:hidden">
+        <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
