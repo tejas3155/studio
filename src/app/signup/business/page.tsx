@@ -15,12 +15,7 @@ export default function BusinessSignupPage() {
         <div className="z-10">
           <Logo className="text-white" />
         </div>
-        <div className="z-10 m-auto flex flex-col items-center text-center">
-          <h1 className="font-headline text-5xl font-bold">CoperVise</h1>
-          <p className="mt-4 text-2xl text-zinc-200">
-            Your AI-Powered Executive Assistant
-          </p>
-        </div>
+        
         <div className="z-10 mt-auto text-center text-sm text-zinc-300">
           <p>© {new Date().getFullYear()} CoperVise Inc. All Rights Reserved.</p>
         </div>
@@ -35,9 +30,9 @@ export default function BusinessSignupPage() {
             </Button>
 
           <div className="text-left">
-            <h1 className="font-headline text-3xl font-bold text-foreground">Get Started with CoperVise</h1>
+            <h1 className="font-headline text-3xl font-bold text-foreground">For Business</h1>
             <p className="mt-2 text-muted-foreground">
-              Create an account to streamline your business operations.
+              CoperVise helps you streamline operations, track key projects, and ensure team alignment effortlessly.
             </p>
           </div>
 
