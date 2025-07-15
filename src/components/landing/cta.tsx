@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BrainCircuit } from 'lucide-react';
+import { ArrowRight, Briefcase } from 'lucide-react';
 
 export function Cta() {
   return (
     <section className="py-20 sm:py-32">
       <div className="container mx-auto px-4 text-center">
-        <BrainCircuit className="mx-auto h-12 w-12 text-primary" />
+        <Briefcase className="mx-auto h-12 w-12 text-primary" />
         <h2 className="mt-6 font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Orchestrate Your Success. Automate the Rest.
         </h2>
