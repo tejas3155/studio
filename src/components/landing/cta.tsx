@@ -14,7 +14,7 @@ export function Cta() {
           See how CoperVise can be your ultimate strategic advantage.
         </p>
         <Button asChild size="lg" className="mt-8">
-          <Link href="/dashboard">
+          <Link href="/signup">
             Get Started Free
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
