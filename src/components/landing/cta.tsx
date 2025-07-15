@@ -8,10 +8,10 @@ export function Cta() {
       <div className="container mx-auto px-4 text-center">
         <BrainCircuit className="mx-auto h-12 w-12 text-primary" />
         <h2 className="mt-6 font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Avoid Fines. Automate Compliance.
+          Orchestrate Your Success. Automate the Rest.
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          Get started for free and see how CoperVise can de-risk your operations.
+          Get started for free and discover a smarter way to manage your work.
         </p>
         <Button asChild size="lg" className="mt-8">
           <Link href="/register">
