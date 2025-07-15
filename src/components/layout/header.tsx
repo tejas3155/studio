@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '@/components/logo';
 
 const navLinks = [
@@ -94,14 +94,17 @@ export function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-full">
-            <div className="flex flex-col gap-6 p-4">
-              <div className="flex items-center justify-between">
+            <SheetHeader>
+               <div className="flex items-center justify-between">
                 <Logo />
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                   <X className="h-6 w-6" />
                   <span className="sr-only">Close menu</span>
                 </Button>
               </div>
+              <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+            </SheetHeader>
+            <div className="flex flex-col gap-6 p-4">
               <nav className="flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <Link key={link.title} href={link.href} className="text-lg font-medium" onClick={() => setIsOpen(false)}>
