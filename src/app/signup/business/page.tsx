@@ -10,14 +10,21 @@ import { ArrowLeft, User, Mail, Lock } from 'lucide-react';
 export default function BusinessSignupPage() {
   return (
     <div className="flex min-h-screen w-full">
-      <div className="relative hidden w-1/2 flex-col justify-between bg-gradient-to-br from-purple-600 to-teal-500 p-8 text-white lg:flex">
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="z-10">
-          <Logo className="text-white" />
-        </div>
-        
-        <div className="z-10 mt-auto text-center text-sm text-zinc-300">
-          <p>© {new Date().getFullYear()} CoperVise Inc. All Rights Reserved.</p>
+      <div className="relative hidden w-1/2 lg:block">
+        <Image
+          src="https://placehold.co/960x1080.png"
+          alt="CoperVise branding"
+          width={960}
+          height={1080}
+          className="h-full w-full object-cover"
+          data-ai-hint="gradient abstract"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/70 to-teal-500/70"></div>
+        <div className="absolute inset-0 flex flex-col justify-between p-8 text-white">
+            <Logo className="text-white" />
+          <div className="mt-auto text-center text-sm text-zinc-300">
+            <p>© {new Date().getFullYear()} CoperVise Inc. All Rights Reserved.</p>
+          </div>
         </div>
       </div>
       <div className="flex w-full items-center justify-center bg-card p-8 lg:w-1/2">
