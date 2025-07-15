@@ -14,8 +14,8 @@ export function Hero() {
           CoperVise is the connected workspace where better, faster work happens. Now with generative AI.
         </p>
         <Button asChild size="lg" className="mt-8">
-          <Link href="/signup">
-            Get CoperVise free
+          <Link href="/register">
+            Register
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </Button>

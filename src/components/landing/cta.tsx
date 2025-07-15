@@ -14,8 +14,8 @@ export function Cta() {
           Play with a CoperVise page and get a feel for it.
         </p>
         <Button asChild size="lg" className="mt-8">
-          <Link href="/signup">
-            Try CoperVise free
+          <Link href="/register">
+            Register
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </Button>

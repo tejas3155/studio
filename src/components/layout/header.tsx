@@ -92,7 +92,7 @@ export function Header() {
             <Link href="/login">Log in</Link>
           </Button>
           <Button asChild>
-            <Link href="/signup">Get CoperVise free <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            <Link href="/register">Register <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
         </div>
 
@@ -127,7 +127,7 @@ export function Header() {
                   <Link href="/login">Log in</Link>
                 </Button>
                 <Button asChild>
-                  <Link href="/signup">Get CoperVise free <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                  <Link href="/register">Register <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
               </div>
             </div>
