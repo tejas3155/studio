@@ -36,7 +36,7 @@ const footerLinks = {
   'Get Started': [
     { title: 'Request a demo', href: '#' },
     { title: 'Switch from...', href: '#' },
-    { title: 'Log in', href: '/signup' },
+    { title: 'Log in', href: '/login' },
     { title: 'Register', href: '/signup' },
   ],
 };
@@ -49,7 +49,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
+    <footer className="border-t border-border/20 bg-background">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-7">
           <div className="col-span-2 lg:col-span-1">
@@ -78,7 +78,7 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-12 border-t pt-8 text-sm text-muted-foreground">
+        <div className="mt-12 border-t border-border/20 pt-8 text-sm text-muted-foreground">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p>&copy; {new Date().getFullYear()} CoperVise, Inc. All rights reserved.</p>
             <div className="flex gap-4">

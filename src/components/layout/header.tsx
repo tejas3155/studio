@@ -51,7 +51,7 @@ function NavLink({ title, href, subLinks }: { title: string; href: string; subLi
             {title} <ChevronDown className="h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="start" className="w-64">
+        <DropdownMenuContent align="start" className="w-64 bg-background/80 backdrop-blur-md">
           {subLinks.map((link) => (
             <DropdownMenuItem key={link.title} asChild>
               <Link href={link.href} className="flex flex-col items-start">
@@ -87,7 +87,7 @@ export function Header() {
 
         <div className="hidden items-center gap-2 md:flex">
           <Button variant="ghost" asChild>
-            <Link href="/signup">Log In</Link>
+            <Link href="/login">Log In</Link>
           </Button>
           <Button asChild>
             <Link href="/signup">Register</Link>
@@ -101,8 +101,8 @@ export function Header() {
               <span className="sr-only">Open menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-full">
-            <SheetHeader>
+          <SheetContent side="right" className="w-full bg-background/95 backdrop-blur">
+             <SheetHeader>
                <div className="flex items-center justify-between">
                 <Logo />
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
@@ -122,7 +122,7 @@ export function Header() {
               </nav>
               <div className="mt-auto flex flex-col gap-2 border-t pt-4">
                 <Button variant="ghost" asChild>
-                  <Link href="/signup">Log In</Link>
+                  <Link href="/login">Log In</Link>
                 </Button>
                 <Button asChild>
                   <Link href="/signup">Register</Link>

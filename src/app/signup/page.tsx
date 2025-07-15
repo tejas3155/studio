@@ -8,7 +8,7 @@ const roles = [
   {
     icon: Briefcase,
     title: 'Business',
-    href: '/dashboard/business',
+    href: '/signup/business',
   },
   {
     icon: Building,
@@ -53,7 +53,7 @@ export default function SignupPage() {
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {roles.map((role) => (
             <Link key={role.title} href={role.href} passHref>
-              <Card className="group cursor-pointer bg-card/50 transition-all duration-300 hover:bg-card hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
+              <Card className="group cursor-pointer border-border/20 bg-card/50 transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
                 <CardHeader className="flex flex-col items-center justify-center text-center">
                   <role.icon className="mb-4 h-10 w-10 text-primary transition-transform duration-300 group-hover:scale-110" />
                   <CardTitle className="font-headline text-xl">{role.title}</CardTitle>
