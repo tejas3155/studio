@@ -13,12 +13,11 @@ export default function BusinessSignupPage() {
     <div className="flex min-h-screen w-full">
       <div className="relative hidden w-1/2 lg:block">
         <Image
-          src="https://placehold.co/960x1080.png"
+          src="/CoperVise Left.png"
           alt="CoperVise branding"
           width={960}
           height={1080}
           className="absolute inset-0 h-full w-full object-cover"
-          data-ai-hint="gradient abstract"
         />
       </div>
       <div className="flex w-full items-center justify-center bg-card p-8 lg:w-1/2">
@@ -33,9 +32,9 @@ export default function BusinessSignupPage() {
               <Logo />
             </div>
           <div className="text-center">
-            <h1 className="font-headline text-3xl font-bold text-foreground">Sign Up for CoperVise</h1>
+            <h1 className="font-headline text-3xl font-bold text-foreground">Unlock Your Business Potential</h1>
             <p className="mt-2 text-muted-foreground">
-              Streamline your business operations, track key projects, and ensure team alignment effortlessly.
+              CoperVise helps you streamline operations, track key projects, and ensure team alignment effortlessly.
             </p>
           </div>
 
