@@ -2,16 +2,16 @@ import Image from 'next/image';
 
 const features = [
   {
-    title: 'AI-Powered Compliance Automation',
-    description: "CoperVise's AI assistant is tailor-made for institutional compliance events like NAAC, ISO audits, and more. Automatically generate reports, track progress, and ensure you're always audit-ready.",
+    title: 'Auto-Regulation Parsing & AI Event Analysis',
+    description: "Upload regulatory documents and CoperVise automatically identifies obligations and deadlines. Our AI analyzes your tasks to check if they meet compliance rules from SEBI, GDPR, ISO, and more.",
     image: 'https://placehold.co/1024x768.png',
-    aiHint: 'artificial intelligence compliance'
+    aiHint: 'ai parsing document'
   },
   {
-    title: 'Seamless Coordination, Powerful Execution',
-    description: 'Move beyond chaotic spreadsheets and email chains. Our coordinator-driven workflows and executive summaries provide crystal-clear visibility into every task, from assignment to completion.',
+    title: 'Predictive Alerts & Risk Heatmaps',
+    description: "Our PenaltyGuard™ engine alerts you before a missed obligation becomes a fine. Visualize the potential financial or legal impact of missed items with dynamic risk heatmaps, turning reactive panic into proactive strategy.",
     image: 'https://placehold.co/1024x768.png',
-    aiHint: 'team workflow chart'
+    aiHint: 'risk heatmap chart'
   }
 ];
 

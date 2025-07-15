@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'CoperVise: AI Executive Assistant',
-  description: 'Your AI-Powered Executive Assistant for ultimate productivity.',
+  title: 'CoperVise: Smart Compliance Automation',
+  description: 'The smart platform to prevent regulatory slip-ups, auto-track obligations, and offer intelligent oversight with AI.',
 };
 
 export default function RootLayout({

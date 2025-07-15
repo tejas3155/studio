@@ -3,54 +3,51 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const testimonials = [
   {
-    quote: "CoperVise has revolutionized our workflow. The AI assistant saves us hours every week, allowing us to focus on what truly matters.",
-    author: "Sarah Johnson",
-    title: "CEO, Innovate Inc.",
+    quote: "CoperVise is our single source of truth for compliance. The AI-powered alerts have saved us from potential fines multiple times. It's a must-have.",
+    author: "Anjali Mehta",
+    title: "Compliance Officer, FinTech Corp",
     avatar: "https://placehold.co/40x40.png",
-    companyLogo: "https://placehold.co/100x40.png?text=Innovate",
     aiHint: "woman portrait"
   },
   {
-    quote: "The ability to have all our docs, projects, and wikis in one place is a game-changer. CoperVise is the single source of truth for our entire company.",
-    author: "Michael Chen",
-    title: "CTO, Tech Solutions",
+    quote: "As a founder, I can finally sleep at night. CoperVise gives me a real-time heatmap of our compliance risks. It's a game-changer for governance.",
+    author: "Rohan Desai",
+    title: "CEO, InnovateAI",
     avatar: "https://placehold.co/40x40.png",
-    companyLogo: "https://placehold.co/100x40.png?text=TechCo",
     aiHint: "man portrait"
   },
   {
-    quote: "As a startup, we need tools that are powerful yet affordable. CoperVise delivers on both fronts, with features that scale as we grow.",
-    author: "Emily Rodriguez",
-    title: "Founder, Creative Minds",
+    quote: "Audit-readiness used to be a frantic, quarterly fire-drill. Now, with CoperVise's audit trail logging, we can generate reports in minutes.",
+    author: "Priya Sharma",
+    title: "Legal Head, HealthCare Solutions",
     avatar: "https://placehold.co/40x40.png",
-    companyLogo: "https://placehold.co/100x40.png?text=Creative",
     aiHint: "woman portrait"
   },
 ];
 
 const companyLogos = [
-  { name: 'Company A', logo: 'https://placehold.co/120x50.png?text=CompanyA' },
-  { name: 'Company B', logo: 'https://placehold.co/120x50.png?text=CompanyB' },
-  { name: 'Company C', logo: 'https://placehold.co/120x50.png?text=CompanyC' },
-  { name: 'Company D', logo: 'https://placehold.co/120x50.png?text=CompanyD' },
-  { name: 'Company E', logo: 'https://placehold.co/120x50.png?text=CompanyE' },
+  { name: 'Company A', logo: 'https://placehold.co/120x50.png?text=FinTechCorp' },
+  { name: 'Company B', logo: 'https://placehold.co/120x50.png?text=InnovateAI' },
+  { name: 'Company C', logo: 'https://placehold.co/120x50.png?text=HealthCare' },
+  { name: 'Company D', logo: 'https://placehold.co/120x50.png?text=InfraCo' },
+  { name: 'Company E', logo: 'https://placehold.co/120x50.png?text=Logistics+' },
 ];
 
 export function Testimonials() {
   return (
-    <section className="py-20 sm:py-32">
+    <section className="py-20 sm:py-32 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Join a global movement. Unleash your potential.
+            Trusted by Industry Leaders
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            From startups to Fortune 500s, millions use CoperVise to power their teams.
+            Teams from fast-growing startups to established enterprises rely on CoperVise for proactive compliance and governance.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.author} className="flex flex-col">
+            <Card key={testimonial.author} className="flex flex-col bg-background">
               <CardContent className="flex flex-1 flex-col justify-between p-6">
                 <blockquote className="text-lg">"{testimonial.quote}"</blockquote>
                 <div className="mt-6 flex items-center gap-4">
@@ -66,7 +63,7 @@ export function Testimonials() {
         </div>
         <div className="mt-20">
           <h3 className="text-center text-lg font-semibold text-muted-foreground">
-            Trusted by teams at
+            Powering compliance at forward-thinking companies
           </h3>
           <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-4">
             {companyLogos.map((company) => (

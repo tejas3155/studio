@@ -1,36 +1,36 @@
-import { FileCheck, Bot, Zap, Users, CalendarClock, Mail } from 'lucide-react';
+import { ShieldAlert, Bot, CalendarClock, Workflow, BarChart3, Fingerprint } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const blocks = [
   {
     icon: Bot,
-    title: 'AI for Compliance',
-    description: 'Your built-in assistant for NAAC, ISO, audits and other compliance events.'
+    title: 'AI Event Analysis',
+    description: 'Checks if tasks meet compliance rules (SEBI, GDPR, ISO).'
   },
   {
-    icon: FileCheck,
-    title: 'Coordinator-Driven Workflows',
-    description: 'Manage tasks with executive summaries. No more chasing for updates.'
-  },
-  {
-    icon: Users,
-    title: 'Institutional Hierarchy',
-    description: 'Model your organization with departments, roles, and responsibilities.'
+    icon: ShieldAlert,
+    title: 'PenaltyGuard™ Alerts',
+    description: 'Predictive engine alerts you before an obligation becomes a fine.'
   },
   {
     icon: CalendarClock,
     title: 'Smart Compliance Calendar',
-    description: 'Auto-linked obligations and deadlines to keep you on track.'
+    description: 'Auto-syncs obligations across departments with real-time updates.'
   },
   {
-    icon: Zap,
-    title: 'Framework-Ready',
-    description: 'Plug-and-play templates for NAAC, NBA, ISO, NIRF, and more.'
+    icon: Fingerprint,
+    title: 'Audit Trail Logging',
+    description: 'Everything is time-stamped and stored with context for legal audits.'
   },
   {
-    icon: Mail,
-    title: 'AI-Generated Reminders',
-    description: 'Automate follow-up emails and notifications to ensure tasks get done.'
+    icon: BarChart3,
+    title: 'Risk Heatmaps',
+    description: 'Visualize potential financial or legal risk of missed items.'
+  },
+  {
+    icon: Workflow,
+    title: 'Dynamic Workflow Engine',
+    description: 'Create adaptive flows for SOPs that auto-trigger based on rules.'
   }
 ];
 
@@ -40,10 +40,10 @@ export function BuildingBlocks() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            A Platform for Institutional Excellence
+            A Platform Built for Proactive Compliance
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            CoperVise integrates the critical functions that Notion, Airtable, and traditional ERPs can't handle together.
+            CoperVise provides a single pane of truth for all your compliance needs. Go from fragmented documents and emails to a structured, automated system.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

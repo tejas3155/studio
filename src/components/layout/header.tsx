@@ -18,27 +18,21 @@ const navLinks = [
     title: 'Product',
     href: '#',
     subLinks: [
-      { title: 'AI', href: '#' },
-      { title: 'Docs', href: '#' },
-      { title: 'Wikis', href: '#' },
-      { title: 'Projects', href: '#' },
+      { title: 'AI Automation', href: '#' },
+      { title: 'Smart Calendar', href: '#' },
+      { title: 'Risk Heatmaps', href: '#' },
+      { title: 'Audit Trails', href: '#' },
     ],
   },
-  { title: 'Download', href: '#' },
   {
     title: 'Solutions',
     href: '#',
     subLinks: [
-      { title: 'Enterprise', href: '#' },
-      { title: 'Small business', href: '#' },
-      { title: 'Personal use', href: '#' },
+      { title: 'For Legal Teams', href: '#' },
+      { title: 'For Founders', href: '#' },
+      { title: 'For Startups', href: '#' },
     ],
   },
-  { title: 'Resources', href: '#', subLinks: [
-    { title: 'Blog', href: '#' },
-    { title: 'Help center', href: '#' },
-    { title: 'Webinars', href: '#' },
-  ]},
   { title: 'Pricing', href: '#' },
 ];
 
@@ -85,14 +79,10 @@ export function Header() {
 
         <div className="hidden items-center gap-2 md:flex">
           <Button variant="ghost" asChild>
-            <Link href="#">Request a demo</Link>
-          </Button>
-          <div className="h-6 w-px bg-border"></div>
-          <Button variant="ghost" asChild>
-            <Link href="/login">Log in</Link>
+            <Link href="/login">Log In</Link>
           </Button>
           <Button asChild>
-            <Link href="/register">Register <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            <Link href="/register">Get Started Free <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
         </div>
 
@@ -121,13 +111,10 @@ export function Header() {
               </nav>
               <div className="mt-auto flex flex-col gap-2 border-t pt-4">
                 <Button variant="ghost" asChild>
-                  <Link href="#">Request a demo</Link>
-                </Button>
-                <Button variant="ghost" asChild>
-                  <Link href="/login">Log in</Link>
+                  <Link href="/login">Log In</Link>
                 </Button>
                 <Button asChild>
-                  <Link href="/register">Register <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                  <Link href="/register">Get Started Free <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
               </div>
             </div>
