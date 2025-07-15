@@ -41,7 +41,7 @@ const audiences = [
 
 export function WhoIsItFor() {
   return (
-    <section className="py-20 sm:py-32">
+    <section className="py-20 sm:py-32 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -53,7 +53,7 @@ export function WhoIsItFor() {
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {audiences.map((audience) => (
-            <Card key={audience.title} className="transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-1">
+            <Card key={audience.title} className="bg-background transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-1">
               <CardHeader className="flex flex-row items-center gap-4 space-y-0">
                 <audience.icon className="h-8 w-8 text-accent" />
                 <CardTitle>{audience.title}</CardTitle>
