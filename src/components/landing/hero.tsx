@@ -28,6 +28,7 @@ export function Hero() {
           height={750}
           className="mx-auto rounded-xl border shadow-lg"
           data-ai-hint="compliance dashboard risk"
+          priority
         />
       </div>
     </section>
