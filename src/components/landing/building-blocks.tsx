@@ -1,36 +1,36 @@
-import { ShieldAlert, Bot, CalendarClock, Workflow, BarChart3, Fingerprint } from 'lucide-react';
+import { Bot, CalendarCheck, LayoutDashboard, Mic, ShieldCheck, Star } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const blocks = [
   {
     icon: Bot,
-    title: 'AI Event Analysis',
-    description: 'Checks if tasks meet compliance rules (SEBI, GDPR, ISO).'
+    title: 'AI Assistant',
+    description: 'Just type what you need—tasks, notes, or reminders. Our AI will automatically categorize and organize it for you.'
   },
   {
-    icon: ShieldAlert,
-    title: 'PenaltyGuard™ Alerts',
-    description: 'Predictive engine alerts you before an obligation becomes a fine.'
+    icon: CalendarCheck,
+    title: 'AI-Powered Meetings',
+    description: 'Get AI-generated prep points before your meetings and drafted follow-up emails right after.'
   },
   {
-    icon: CalendarClock,
-    title: 'Smart Compliance Calendar',
-    description: 'Auto-syncs obligations across departments with real-time updates.'
+    icon: Mic,
+    title: 'AI Daily Briefing',
+    description: 'Start your day with an intelligent summary of your schedule and priorities, complete with an audio playback.'
   },
   {
-    icon: Fingerprint,
-    title: 'Audit Trail Logging',
-    description: 'Everything is time-stamped and stored with context for legal audits.'
+    icon: Star,
+    title: 'AI Event Prioritization',
+    description: 'Our AI analyzes and prioritizes important events, ensuring executives focus on what matters most.'
   },
   {
-    icon: BarChart3,
-    title: 'Risk Heatmaps',
-    description: 'Visualize potential financial or legal risk of missed items.'
+    icon: LayoutDashboard,
+    title: 'Dynamic Dashboard',
+    description: 'See everything that matters in one unified view, from tasks and meetings to team progress.'
   },
   {
-    icon: Workflow,
-    title: 'Dynamic Workflow Engine',
-    description: 'Create adaptive flows for SOPs that auto-trigger based on rules.'
+    icon: ShieldCheck,
+    title: 'Institutional Frameworks',
+    description: 'Framework-ready for NAAC, NBA, ISO, NIRF, and more. Perfect for educational and corporate compliance.'
   }
 ];
 
@@ -40,10 +40,10 @@ export function BuildingBlocks() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            A Platform Built for Proactive Compliance
+            Built for Execution, Coordination, and Compliance
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            CoperVise provides a single pane of truth for all your compliance needs. Go from fragmented documents and emails to a structured, automated system.
+            CoperVise provides a single pane of truth for all your institutional needs. Go from fragmented documents and emails to a structured, automated system.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

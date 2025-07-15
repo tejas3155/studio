@@ -8,10 +8,10 @@ const features = [
     aiHint: 'ai parsing document'
   },
   {
-    title: 'Predictive Alerts & Risk Heatmaps',
-    description: "Our PenaltyGuard™ engine alerts you before a missed obligation becomes a fine. Visualize the potential financial or legal impact of missed items with dynamic risk heatmaps, turning reactive panic into proactive strategy.",
+    title: 'AI-Powered Meetings and Daily Briefings',
+    description: "Prepare for your day with AI-generated meeting points and a daily audio briefing on your key priorities. After your meetings, CoperVise drafts follow-up emails automatically, ensuring nothing is missed.",
     image: 'https://placehold.co/1024x768.png',
-    aiHint: 'risk heatmap chart'
+    aiHint: 'team meeting collaboration'
   }
 ];
 

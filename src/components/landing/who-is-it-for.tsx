@@ -1,36 +1,36 @@
-import { UserCheck, Crown, Landmark, Briefcase, UserCog, Building } from 'lucide-react';
+import { School, University, Shield, Crown, UserCheck, Briefcase } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const audiences = [
+  {
+    icon: University,
+    title: 'Universities & Colleges',
+    description: 'Track NAAC, NBA, faculty submissions, and internal tasks seamlessly.'
+  },
+  {
+    icon: School,
+    title: 'School Institutions',
+    description: 'Manage administrative workflows, compliance, and reporting with ease.'
+  },
+  {
+    icon: Shield,
+    title: 'Cybersecurity Managers',
+    description: 'Ensure ISO 27001, NIST, or SOC2 documentation compliance with structured workflows.'
+  },
+  {
+    icon: Crown,
+    title: 'Founders & CXOs',
+    description: 'Avoid costly slip-ups with a clear view of all operations and compliance obligations.'
+  },
   {
     icon: UserCheck,
     title: 'Compliance Officers',
     description: 'Gain complete visibility and get automated reminders to mitigate risks effectively.'
   },
   {
-    icon: Crown,
-    title: 'Founders & CXOs',
-    description: 'Avoid costly legal slip-ups during audits, funding rounds, and day-to-day operations.'
-  },
-  {
-    icon: Landmark,
-    title: 'Legal & Finance Teams',
-    description: 'Track notices, SOPs, regulatory changes, and tax filings to avoid fines.'
-  },
-  {
     icon: Briefcase,
-    title: 'HR & ESG Leads',
-    description: 'Monitor labor laws, ESG norms, and internal policies with a clear, auditable trail.'
-  },
-   {
-    icon: UserCog,
-    title: 'Cybersecurity Managers',
-    description: 'Ensure ISO 27001, NIST, or SOC2 documentation compliance with structured workflows.'
-  },
-  {
-    icon: Building,
-    title: 'VC-funded Startups',
-    description: 'Demonstrate regulatory maturity and readiness to investors and stakeholders.'
+    title: 'HR & Admin Teams',
+    description: 'Monitor labor laws, internal policies, and SOPs with a clear, auditable trail.'
   },
 ]
 
