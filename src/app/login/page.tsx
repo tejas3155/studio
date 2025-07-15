@@ -1,34 +1,21 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Building, Mail, Lock } from 'lucide-react';
+import { Logo } from '@/components/logo';
 
 export default function LoginPage() {
   return (
     <div className="flex min-h-screen w-full">
-      <div className="relative hidden w-1/2 lg:block">
-        <Image
-          src="https://placehold.co/960x1080.png"
-          alt="CoperVise branding"
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 h-full w-full"
-          data-ai-hint="gradient abstract"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/70 to-teal-500/70"></div>
-        <div className="absolute inset-0 flex flex-col justify-between p-8 text-white">
-          <Logo className="text-white" />
-          <div className="mt-auto text-center text-sm text-zinc-300">
-            <p>© {new Date().getFullYear()} CoperVise Inc. All Rights Reserved.</p>
-          </div>
-        </div>
+      <div className="relative hidden w-1/2 auth-bg-image lg:block">
       </div>
       <div className="flex w-full items-center justify-center bg-card p-8 lg:w-1/2">
         <div className="w-full max-w-md">
+           <div className="mb-8 lg:hidden">
+              <Logo />
+            </div>
           <div className="text-left">
             <h1 className="font-headline text-3xl font-bold text-foreground">Welcome Back</h1>
             <p className="mt-2 text-muted-foreground">

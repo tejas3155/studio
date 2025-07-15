@@ -12,7 +12,7 @@
     --popover-foreground: 210 40% 98%;
     --primary: 262 84% 59%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 215.4 16.3% 16.9%;
+    --secondary: 224 71.4% 10%;
     --secondary-foreground: 210 40% 98%;
     --muted: 215.4 16.3% 16.9%;
     --muted-foreground: 217.9 10.6% 64.9%;
@@ -65,5 +65,14 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .auth-bg-image {
+    background-image: url('https://user-images.githubusercontent.com/2029369/261332731-1e99158c-e837-4d14-a42e-a54050a4f5b5.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
