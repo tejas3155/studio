@@ -6,13 +6,12 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { ArrowLeft, User, Mail, Lock } from 'lucide-react';
 import { Logo } from '@/components/logo';
-import Image from 'next/image';
 
 export default function StartupSignupPage() {
   return (
     <div className="flex min-h-screen w-full">
-      <div className="relative hidden w-1/2 lg:block overflow-hidden">
-        <div className="auth-bg-image absolute inset-0"></div>
+      <div className="relative hidden w-1/2 lg:block">
+        <img src="/CoperVise Left.png" alt="CoperVise" className="absolute inset-0 h-full w-full object-cover" />
       </div>
       <div className="flex w-full items-center justify-center bg-card p-8 lg:w-1/2">
         <div className="w-full max-w-md">

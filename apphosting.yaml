@@ -5,3 +5,7 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
+# Optionally specify a service account to use.
+# serviceAccount: my-service-account
+# To learn more about other options, run `firebase help apphosting:backends:create`
+# or visit https://firebase.google.com/docs/app-hosting/configure-backend
