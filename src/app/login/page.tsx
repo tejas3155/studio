@@ -10,6 +10,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Mail, Lock, Briefcase, Building, Landmark, Rocket, School, Users } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
+import { useToast } from "@/hooks/use-toast";
 
 const roles = [
   { name: 'Business', icon: Briefcase },
@@ -20,14 +21,55 @@ const roles = [
   { name: 'Government', icon: Landmark },
 ];
 
+// Dummy user data to simulate a database
+const dummyUsers = {
+  'executive@business.com': { sector: 'Business', role: 'executive', password: 'password123' },
+  'coordinator@corporate.com': { sector: 'Corporate', role: 'coordinator', password: 'password123' },
+};
+
 export default function LoginPage() {
   const router = useRouter();
+  const { toast } = useToast();
   const [selectedRole, setSelectedRole] = React.useState(roles[0].name);
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Dummy login logic
-    router.push('/dashboard');
+    
+    const user = dummyUsers[email as keyof typeof dummyUsers];
+
+    if (user) {
+      if (user.sector === selectedRole && user.password === password) {
+        // Successful login
+        if (user.role === 'executive') {
+          router.push('/dashboard/executive');
+        } else if (user.role === 'coordinator') {
+          router.push('/dashboard/coordinator');
+        }
+      } else if (user.sector !== selectedRole) {
+        // Correct user, wrong sector
+        toast({
+            variant: "destructive",
+            title: "Login Failed",
+            description: "Invalid credentials for selected sector. Please check your details.",
+        });
+      } else {
+        // Wrong password
+        toast({
+            variant: "destructive",
+            title: "Login Failed",
+            description: "Invalid email or password.",
+        });
+      }
+    } else {
+      // User not found
+      toast({
+        variant: "destructive",
+        title: "Login Failed",
+        description: "Invalid email or password.",
+      });
+    }
   };
 
   return (
@@ -77,7 +119,15 @@ export default function LoginPage() {
                 <Label htmlFor="email">Email Address</Label>
                 <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <Input id="email" type="email" placeholder="name@company.com" required className="pl-10" />
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="e.g., executive@business.com" 
+                      required 
+                      className="pl-10"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                 </div>
               </div>
               <div className="space-y-2">
@@ -89,7 +139,15 @@ export default function LoginPage() {
                 </div>
                 <div className="relative">
                     <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <Input id="password" type="password" placeholder="Enter your password" required className="pl-10"/>
+                    <Input 
+                      id="password" 
+                      type="password" 
+                      placeholder="Enter your password" 
+                      required 
+                      className="pl-10"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
                 </div>
               </div>
               
