@@ -2,17 +2,31 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Mail, Lock } from 'lucide-react';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Mail, Lock, Briefcase, Building, Landmark, Rocket, School, Users } from 'lucide-react';
 import { Logo } from '@/components/logo';
+import { cn } from '@/lib/utils';
+
+const roles = [
+  { name: 'Business', icon: Briefcase },
+  { name: 'Corporate', icon: Building },
+  { name: 'Startup', icon: Rocket },
+  { name: 'HR', icon: Users },
+  { name: 'Universities', icon: School },
+  { name: 'Government', icon: Landmark },
+];
 
 export default function LoginPage() {
   const router = useRouter();
+  const [selectedRole, setSelectedRole] = React.useState(roles[0].name);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+    // Dummy login logic
     router.push('/dashboard');
   };
 
@@ -29,11 +43,36 @@ export default function LoginPage() {
           <div className="text-center">
             <h1 className="font-headline text-3xl font-bold text-foreground">Welcome Back</h1>
             <p className="mt-2 text-muted-foreground">
-              Enter your credentials to access your account.
+              Select your role and enter your credentials to access your account.
             </p>
           </div>
 
           <form className="mt-8 space-y-6" onSubmit={handleLogin}>
+              <div>
+                <Label className="mb-3 block">Select Your Sector</Label>
+                <RadioGroup 
+                  value={selectedRole}
+                  onValueChange={setSelectedRole}
+                  className="grid grid-cols-3 gap-2"
+                >
+                  {roles.map((role) => (
+                    <div key={role.name}>
+                      <RadioGroupItem value={role.name} id={role.name} className="peer sr-only" />
+                      <Label
+                        htmlFor={role.name}
+                        className={cn(
+                          "flex h-full cursor-pointer flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-2 text-sm hover:bg-accent hover:text-accent-foreground",
+                          "peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/10 [&:has([data-state=checked])]:border-primary"
+                        )}
+                      >
+                        <role.icon className="mb-1 h-5 w-5" />
+                        {role.name}
+                      </Label>
+                    </div>
+                  ))}
+                </RadioGroup>
+              </div>
+
               <div className="space-y-2">
                 <Label htmlFor="email">Email Address</Label>
                 <div className="relative">
