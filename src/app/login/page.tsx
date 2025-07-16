@@ -32,16 +32,6 @@ const roles = [
   { name: 'Government', icon: Landmark },
 ];
 
-// Dummy user data to simulate a database
-const dummyUsers = {
-  'user@business.com': { sector: 'Business', password: 'password123' },
-  'user@corporate.com': { sector: 'Corporate', password: 'password123' },
-  'user@startup.com': { sector: 'Startup', password: 'password123' },
-  'user@hr.com': { sector: 'HR', password: 'password123' },
-  'user@universities.com': { sector: 'Universities', password: 'password123' },
-  'user@government.com': { sector: 'Government', password: 'password123' },
-};
-
 export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
@@ -52,20 +42,8 @@ export default function LoginPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const user = dummyUsers[email as keyof typeof dummyUsers];
-
-    if (user && user.sector === selectedRole && user.password === password) {
-      // Successful login, open role selection dialog
-      setIsRoleSelectionOpen(true);
-    } else {
-        // User not found, wrong sector, or wrong password
-        toast({
-            variant: "destructive",
-            title: "Login Failed",
-            description: "Invalid credentials. Please check your sector, email, and password.",
-        });
-    }
+    // Dummy login: always proceed to role selection
+    setIsRoleSelectionOpen(true);
   };
   
   const handleRoleRedirect = (role: 'executive' | 'coordinator') => {
@@ -177,7 +155,7 @@ export default function LoginPage() {
       <AlertDialog open={isRoleSelectionOpen} onOpenChange={setIsRoleSelectionOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Login Successful</AlertDialogTitle>
+            <AlertDialogTitle>Select Your Role</AlertDialogTitle>
             <AlertDialogDescription>
               Please select the role you want to log in as for this session.
             </AlertDialogDescription>
