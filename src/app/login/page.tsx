@@ -10,46 +10,31 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Briefcase, Building, Landmark, Rocket, School, Users, Mail, Lock } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
-import {
-  AlertDialog,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
 import { Input } from '@/components/ui/input';
 
 const roles = [
-  { name: 'Business', icon: Briefcase },
-  { name: 'Corporate', icon: Building },
-  { name: 'Startup', icon: Rocket },
-  { name: 'HR', icon: Users },
-  { name: 'Universities', icon: School },
-  { name: 'Government', icon: Landmark },
+  { name: 'Business', icon: Briefcase, href: '/login/business/role-selection' },
+  { name: 'Corporate', icon: Building, href: '/login/corporate/role-selection' },
+  { name: 'Startup', icon: Rocket, href: '/login/startup/role-selection' },
+  { name: 'HR', icon: Users, href: '/login/hr/role-selection' },
+  { name: 'Universities', icon: School, href: '/login/universities/role-selection' },
+  { name: 'Government', icon: Landmark, href: '/login/government/role-selection' },
 ];
 
 export default function LoginPage() {
   const router = useRouter();
   const [selectedRole, setSelectedRole] = React.useState(roles[0].name);
-  const [isRoleSelectionOpen, setIsRoleSelectionOpen] = React.useState(false);
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (selectedRole === 'Business') {
-      router.push('/login/business/role-selection');
-    } else {
-      setIsRoleSelectionOpen(true);
+    const role = roles.find(r => r.name === selectedRole);
+    if (role) {
+      router.push(role.href);
     }
   };
   
-  const handleRoleRedirect = (role: 'executive' | 'coordinator') => {
-    router.push(`/dashboard/${role}`);
-  };
-
-
   return (
     <div className="flex min-h-screen w-full">
       <div className="relative hidden w-1/2 lg:block">
@@ -148,22 +133,6 @@ export default function LoginPage() {
             </p>
         </div>
       </div>
-      
-      <AlertDialog open={isRoleSelectionOpen} onOpenChange={setIsRoleSelectionOpen}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Select Your Role</AlertDialogTitle>
-            <AlertDialogDescription>
-              Please select the role you want to log in as for this session.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter className="sm:justify-center flex-col sm:flex-col sm:space-x-0 gap-2">
-            <Button onClick={() => handleRoleRedirect('executive')}>Log in as Executive</Button>
-            <Button variant="secondary" onClick={() => handleRoleRedirect('coordinator')}>Log in as Coordinator</Button>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-
     </div>
   );
 }
