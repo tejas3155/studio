@@ -25,7 +25,7 @@ export default function HrSignupPage() {
               <Logo />
             </div>
           <div className="text-center">
-            <h1 className="font-headline text-3xl font-bold text-foreground">Empower Your HR & Admin</h1>
+            <h1 className="font-headline text-3xl font-bold text-foreground">Empower Your HR &amp; Admin</h1>
             <p className="mt-2 text-muted-foreground">
               Monitor labor laws, internal policies, and SOPs with a clear, auditable trail.
             </p>
