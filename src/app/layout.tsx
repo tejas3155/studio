@@ -1,6 +1,7 @@
+
+
 import type { Metadata } from 'next';
 import './globals.css';
-import { Toaster } from "@/components/ui/toaster";
 import { Inter, Space_Grotesk } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -15,6 +16,8 @@ const fontHeadline = Space_Grotesk({
   weight: ['500', '600', '700'],
   variable: '--font-headline',
 });
+
+// TODO: Investigate back/forward cache prevention due to WebSocket and cache-control: no-store.
 
 export const metadata: Metadata = {
   title: 'CoperVise: Smart Compliance Automation',
@@ -36,7 +39,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-          <Toaster />
         </ThemeProvider>
       </body>
     </html>

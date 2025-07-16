@@ -22,7 +22,7 @@ export function Hero() {
       </div>
       <div className="mt-12">
         <Image
-          src="https://placehold.co/1200x750.png"
+          src="/images/hero-image.png" // Replace with the actual, optimized hero image
           alt="CoperVise application dashboard showing compliance status"
           width={1200}
           height={750}
@@ -31,6 +31,7 @@ export function Hero() {
           priority
         />
       </div>
+      {/* Consider image optimization techniques like using appropriate formats (WebP), compression, and responsive images. */}
     </section>
   );
 }

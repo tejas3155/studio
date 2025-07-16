@@ -2,6 +2,7 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
+  // TODO: Investigate enabling HTTP/2 for production deployments
   typescript: {
     ignoreBuildErrors: true,
   },
