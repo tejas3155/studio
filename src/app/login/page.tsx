@@ -5,17 +5,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Mail, Lock, Briefcase, Building, Landmark, Rocket, School, Users } from 'lucide-react';
+import { Briefcase, Building, Landmark, Rocket, School, Users } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
-import { useToast } from "@/hooks/use-toast";
 import {
   AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
@@ -34,10 +30,7 @@ const roles = [
 
 export default function LoginPage() {
   const router = useRouter();
-  const { toast } = useToast();
   const [selectedRole, setSelectedRole] = React.useState(roles[0].name);
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
   const [isRoleSelectionOpen, setIsRoleSelectionOpen] = React.useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
@@ -64,7 +57,7 @@ export default function LoginPage() {
           <div className="text-center">
             <h1 className="font-headline text-3xl font-bold text-foreground">Welcome Back</h1>
             <p className="mt-2 text-muted-foreground">
-              Select your sector and enter your credentials to access your account.
+              Select your sector to access your dashboard.
             </p>
           </div>
 
@@ -92,42 +85,6 @@ export default function LoginPage() {
                     </div>
                   ))}
                 </RadioGroup>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email Address</Label>
-                <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder="e.g., user@business.com" 
-                      required 
-                      className="pl-10"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                    <Label htmlFor="password">Password</Label>
-                    <Link href="#" className="text-sm font-medium text-primary hover:underline">
-                        Forgot password?
-                    </Link>
-                </div>
-                <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <Input 
-                      id="password" 
-                      type="password" 
-                      placeholder="Enter your password" 
-                      required 
-                      className="pl-10"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
               </div>
               
               <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" size="lg">Login</Button>
