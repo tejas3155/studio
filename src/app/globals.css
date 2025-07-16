@@ -70,7 +70,7 @@
 
 @layer utilities {
   .auth-bg-image {
-    background-image: url('https://user-images.githubusercontent.com/2029369/261332731-1e99158c-e837-4d14-a42e-a54050a4f5b5.png');
+    background-image: url('/CoperVise Left.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -14,9 +14,8 @@ export default function UniversitySignupPage() {
         <Image
           src="/CoperVise Left.png"
           alt="CoperVise branding"
-          width={960}
-          height={1080}
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          className="object-cover"
         />
       </div>
       <div className="flex w-full items-center justify-center bg-card p-8 lg:w-1/2">

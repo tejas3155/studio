@@ -14,9 +14,8 @@ export default function CorporateSignupPage() {
         <Image
           src="/CoperVise Left.png"
           alt="CoperVise branding"
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0"
+          fill
+          className="object-cover"
         />
       </div>
       <div className="flex w-full items-center justify-center bg-card p-8 lg:w-1/2">
