@@ -38,8 +38,11 @@ export default function LoginPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Dummy login: always proceed to role selection
-    setIsRoleSelectionOpen(true);
+    if (selectedRole === 'Business') {
+      router.push('/login/business/role-selection');
+    } else {
+      setIsRoleSelectionOpen(true);
+    }
   };
   
   const handleRoleRedirect = (role: 'executive' | 'coordinator') => {
