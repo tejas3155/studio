@@ -11,7 +11,7 @@ export default function GovernmentSignupPage() {
   return (
     <div className="flex min-h-screen w-full">
       <div className="relative hidden w-1/2 lg:block">
-        <img src="/CoperVise Left.png" alt="CoperVise" className="absolute inset-0 h-full w-full object-cover" />
+        <img src="/images/CoperVise Left.png" alt="CoperVise" className="absolute inset-0 h-full w-full object-cover" />
       </div>
       <div className="flex w-full items-center justify-center bg-card p-8 lg:w-1/2">
         <div className="w-full max-w-md">
