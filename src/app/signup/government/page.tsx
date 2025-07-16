@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -11,12 +10,7 @@ export default function GovernmentSignupPage() {
   return (
     <div className="flex min-h-screen w-full">
       <div className="relative hidden w-1/2 lg:block">
-        <Image
-          src="/CoperVise Left.png"
-          alt="CoperVise branding"
-          fill
-          className="object-cover"
-        />
+        <div className="auth-bg-image absolute inset-0"></div>
       </div>
       <div className="flex w-full items-center justify-center bg-card p-8 lg:w-1/2">
         <div className="w-full max-w-md">
