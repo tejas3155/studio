@@ -12,7 +12,7 @@ export default function CoordinatorDashboardPage() {
           <CardTitle className="text-2xl font-bold">Coordinator Dashboard</CardTitle>
         </CardHeader>
         <CardContent className="text-center">
-          <p className="text-muted-foreground">Welcome! Here are your tasks and team coordination activities.</p>
+          <p className="text-muted-foreground">Welcome, Coordinator! Here are your tasks and team coordination activities.</p>
           <Button asChild className="mt-6">
             <Link href="/login">
               Log Out

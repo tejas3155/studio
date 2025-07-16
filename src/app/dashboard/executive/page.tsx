@@ -12,7 +12,7 @@ export default function ExecutiveDashboardPage() {
           <CardTitle className="text-2xl font-bold">Executive Dashboard</CardTitle>
         </CardHeader>
         <CardContent className="text-center">
-          <p className="text-muted-foreground">Welcome! This is your high-level overview of all strategic operations.</p>
+          <p className="text-muted-foreground">Welcome, Executive! This is your high-level overview of all strategic operations.</p>
           <Button asChild className="mt-6">
             <Link href="/login">
               Log Out

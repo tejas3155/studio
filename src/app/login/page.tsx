@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -11,6 +12,16 @@ import { Mail, Lock, Briefcase, Building, Landmark, Rocket, School, Users } from
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
 import { useToast } from "@/hooks/use-toast";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
 
 const roles = [
   { name: 'Business', icon: Briefcase },
@@ -23,8 +34,12 @@ const roles = [
 
 // Dummy user data to simulate a database
 const dummyUsers = {
-  'executive@business.com': { sector: 'Business', role: 'executive', password: 'password123' },
-  'coordinator@corporate.com': { sector: 'Corporate', role: 'coordinator', password: 'password123' },
+  'user@business.com': { sector: 'Business', password: 'password123' },
+  'user@corporate.com': { sector: 'Corporate', password: 'password123' },
+  'user@startup.com': { sector: 'Startup', password: 'password123' },
+  'user@hr.com': { sector: 'HR', password: 'password123' },
+  'user@universities.com': { sector: 'Universities', password: 'password123' },
+  'user@government.com': { sector: 'Government', password: 'password123' },
 };
 
 export default function LoginPage() {
@@ -33,44 +48,30 @@ export default function LoginPage() {
   const [selectedRole, setSelectedRole] = React.useState(roles[0].name);
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [isRoleSelectionOpen, setIsRoleSelectionOpen] = React.useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     
     const user = dummyUsers[email as keyof typeof dummyUsers];
 
-    if (user) {
-      if (user.sector === selectedRole && user.password === password) {
-        // Successful login
-        if (user.role === 'executive') {
-          router.push('/dashboard/executive');
-        } else if (user.role === 'coordinator') {
-          router.push('/dashboard/coordinator');
-        }
-      } else if (user.sector !== selectedRole) {
-        // Correct user, wrong sector
-        toast({
-            variant: "destructive",
-            title: "Login Failed",
-            description: "Invalid credentials for selected sector. Please check your details.",
-        });
-      } else {
-        // Wrong password
-        toast({
-            variant: "destructive",
-            title: "Login Failed",
-            description: "Invalid email or password.",
-        });
-      }
+    if (user && user.sector === selectedRole && user.password === password) {
+      // Successful login, open role selection dialog
+      setIsRoleSelectionOpen(true);
     } else {
-      // User not found
-      toast({
-        variant: "destructive",
-        title: "Login Failed",
-        description: "Invalid email or password.",
-      });
+        // User not found, wrong sector, or wrong password
+        toast({
+            variant: "destructive",
+            title: "Login Failed",
+            description: "Invalid credentials. Please check your sector, email, and password.",
+        });
     }
   };
+  
+  const handleRoleRedirect = (role: 'executive' | 'coordinator') => {
+    router.push(`/dashboard/${role}`);
+  };
+
 
   return (
     <div className="flex min-h-screen w-full">
@@ -85,7 +86,7 @@ export default function LoginPage() {
           <div className="text-center">
             <h1 className="font-headline text-3xl font-bold text-foreground">Welcome Back</h1>
             <p className="mt-2 text-muted-foreground">
-              Select your role and enter your credentials to access your account.
+              Select your sector and enter your credentials to access your account.
             </p>
           </div>
 
@@ -122,7 +123,7 @@ export default function LoginPage() {
                     <Input 
                       id="email" 
                       type="email" 
-                      placeholder="e.g., executive@business.com" 
+                      placeholder="e.g., user@business.com" 
                       required 
                       className="pl-10"
                       value={email}
@@ -172,6 +173,22 @@ export default function LoginPage() {
             </p>
         </div>
       </div>
+      
+      <AlertDialog open={isRoleSelectionOpen} onOpenChange={setIsRoleSelectionOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Login Successful</AlertDialogTitle>
+            <AlertDialogDescription>
+              Please select the role you want to log in as for this session.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter className="sm:justify-center flex-col sm:flex-col sm:space-x-0 gap-2">
+            <Button onClick={() => handleRoleRedirect('executive')}>Log in as Executive</Button>
+            <Button variant="secondary" onClick={() => handleRoleRedirect('coordinator')}>Log in as Coordinator</Button>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
     </div>
   );
 }
