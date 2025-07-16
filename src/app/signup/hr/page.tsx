@@ -10,7 +10,7 @@ import { Logo } from '@/components/logo';
 export default function HrSignupPage() {
   return (
     <div className="flex min-h-screen w-full">
-      <div className="relative hidden w-1/2 lg:block">
+      <div className="relative hidden w-1/2 lg:block overflow-hidden">
         <div className="auth-bg-image absolute inset-0"></div>
       </div>
       <div className="flex w-full items-center justify-center bg-card p-8 lg:w-1/2">
