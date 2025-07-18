@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -31,13 +30,13 @@ const menuItems = [
   {
     title: 'Dashboard',
     icon: LayoutGrid,
-    href: '/dashboard/business/overview',
+    href: '/dashboard/business/coordinator', // Points to coordinator, can be adapted for executive
   },
   {
     title: 'Tasks & Calendar',
     icon: ClipboardList,
     subItems: [
-      { title: 'Task List', href: '/dashboard/business/tasks' },
+      { title: 'Task Manager', href: '/dashboard/business/tasks' },
       { title: 'Smart Calendar', href: '/dashboard/business/calendar' },
     ],
   },
@@ -92,9 +91,17 @@ const menuItems = [
 export function BusinessSidebar() {
   const pathname = usePathname();
 
+  // Determine active dashboard for the main link
+  const overviewHref = pathname.includes('/executive') 
+    ? '/dashboard/business/executive' 
+    : '/dashboard/business/coordinator';
+  
+  menuItems[0].href = overviewHref;
+
+
   return (
     <nav className="grid items-start px-4 text-sm font-medium">
-      <Accordion type="multiple" className="w-full" defaultValue={['Tasks & Calendar', 'Revenue & Risks']}>
+      <Accordion type="multiple" className="w-full" defaultValue={['Tasks & Calendar', 'Revenue & Risks', 'Clients & Vendors', 'Reports & Docs', 'AI Tools']}>
         {menuItems.map((item) =>
           item.subItems ? (
             <AccordionItem key={item.title} value={item.title} className="border-b-0">
@@ -127,7 +134,7 @@ export function BusinessSidebar() {
               href={item.href || '#'}
               className={cn(
                 'flex items-center gap-3 rounded-lg px-3 py-2 text-base text-foreground transition-all hover:bg-primary/10 hover:text-primary',
-                pathname === item.href && 'bg-primary/10 text-primary font-bold'
+                (pathname === item.href) && 'bg-primary/10 text-primary font-bold'
               )}
             >
               <item.icon className="h-5 w-5" />
