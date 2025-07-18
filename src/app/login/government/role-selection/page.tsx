@@ -19,21 +19,21 @@ export default function GovernmentRoleSelectionPage() {
           Choose which dashboard you want to access for this session.
         </p>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-          <Link href="/dashboard/executive">
+          <Link href="/dashboard/government/executive">
             <Card className="group cursor-pointer border-border/20 bg-card/50 transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
               <CardHeader className="flex flex-col items-center justify-center p-8 text-center">
                 <UserCheck className="mb-6 h-16 w-16 text-primary transition-transform duration-300 group-hover:scale-110" />
                 <CardTitle className="font-headline text-2xl">Executive</CardTitle>
-                <CardDescription className="mt-2">Access the high-level strategic overview and reporting tools.</CardDescription>
+                <CardDescription className="mt-2">Access the high-level strategic overview and reporting tools for public sector management.</CardDescription>
               </CardHeader>
             </Card>
           </Link>
-          <Link href="/dashboard/coordinator">
+          <Link href="/dashboard/government/coordinator">
             <Card className="group cursor-pointer border-border/20 bg-card/50 transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
               <CardHeader className="flex flex-col items-center justify-center p-8 text-center">
                 <Users className="mb-6 h-16 w-16 text-primary transition-transform duration-300 group-hover:scale-110" />
                 <CardTitle className="font-headline text-2xl">Coordinator</CardTitle>
-                <CardDescription className="mt-2">Manage day-to-day tasks, team coordination, and operational activities.</CardDescription>
+                <CardDescription className="mt-2">Manage day-to-day tasks, file tracking, and public communications.</CardDescription>
               </CardHeader>
             </Card>
           </Link>
