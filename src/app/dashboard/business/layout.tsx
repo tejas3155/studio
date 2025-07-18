@@ -3,7 +3,7 @@ import { BusinessSidebar } from '@/components/dashboard/business-sidebar';
 import { Header } from '@/components/layout/header';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Bell, Menu, Search, UserCircle } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Input } from '@/components/ui/input';
@@ -38,10 +38,11 @@ export default function BusinessDashboardLayout({
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="flex flex-col">
-              <div className="flex h-[60px] items-center border-b px-6">
-                 <Logo />
-              </div>
+            <SheetContent side="left" className="flex flex-col p-0">
+                <SheetHeader className="h-[60px] flex flex-row items-center border-b px-6">
+                    <Logo />
+                    <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                </SheetHeader>
               <BusinessSidebar />
             </SheetContent>
           </Sheet>
