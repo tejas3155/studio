@@ -1,15 +1,16 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BarChart, Bot, LineChart, PieChart, Siren, Wallet, Waves } from "lucide-react";
+import { BarChart, Bot, LineChart, PieChart, Siren, Wallet, Waves, FileText } from "lucide-react";
 
 const features = [
   { name: "Priority Alerts", icon: Siren },
   { name: "AI Daily Briefing", icon: Bot },
-  { name: "Revenue Risk (Chart)", icon: BarChart },
-  { name: "Client Sentiment (Chart)", icon: PieChart },
-  { name: "KPI Tracker (Chart)", icon: LineChart },
+  { name: "Revenue Risk", icon: BarChart },
+  { name: "Client Sentiment", icon: PieChart },
+  { name: "KPI Tracker", icon: LineChart },
   { name: "Forecast Variance", icon: Waves },
   { name: "Expense Anomalies", icon: Wallet },
+  { name: "Contract Health", icon: FileText },
 ];
 
 export default function BusinessExecutiveDashboard() {
@@ -42,7 +43,7 @@ export default function BusinessExecutiveDashboard() {
                 <CardDescription>Additional strategic visualizations for the Executive.</CardDescription>
             </CardHeader>
             <CardContent>
-                <p>Competitive Intelligence Feed, Contract Health Dashboard, and other visualizations will be displayed here.</p>
+                <p>Competitive Intelligence Feed and other visualizations will be displayed here.</p>
             </CardContent>
         </Card>
        </div>

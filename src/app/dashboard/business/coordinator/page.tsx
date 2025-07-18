@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BarChart3, Bot, Calendar, HeartHandshake, Mic, Siren, TrendingUp, Wallet } from "lucide-react";
+import { BarChart3, Bot, Calendar, HeartHandshake, Mic, Siren, TrendingUp, Wallet, FileText, Users } from "lucide-react";
 
 const features = [
   { name: "Priority Alerts", icon: Siren },
@@ -11,6 +11,8 @@ const features = [
   { name: "Voice-to-Task", icon: Mic },
   { name: "KPI Tracker", icon: TrendingUp },
   { name: "Competitive Intelligence", icon: BarChart3 },
+  { name: "Contract Health", icon: FileText },
+  { name: "Team Management", icon: Users },
 ];
 
 export default function BusinessCoordinatorDashboard() {
@@ -43,7 +45,7 @@ export default function BusinessCoordinatorDashboard() {
                 <CardDescription>Additional tools and modules for the Coordinator.</CardDescription>
             </CardHeader>
             <CardContent>
-                <p>Contract Health Dashboard, Forecast Variance Tracker, Expense Anomaly Detector, and more will be displayed here.</p>
+                <p>Forecast Variance Tracker, Expense Anomaly Detector, and more will be displayed here.</p>
             </CardContent>
         </Card>
        </div>
