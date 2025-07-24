@@ -83,7 +83,7 @@ export default function BusinessComplianceDashboard() {
                   <TableCell className="font-medium">{license.name}</TableCell>
                   <TableCell>{license.expiryDate}</TableCell>
                   <TableCell>
-                    <Badge variant={license.status === 'Active' ? 'secondary' : 'destructive'}>{license.status}</Badge>
+                    <Badge variant={license.status === 'Active' ? 'secondary' : license.status === 'Expires Soon' ? 'default' : 'destructive'}>{license.status}</Badge>
                   </TableCell>
                   <TableCell>{license.owner}</TableCell>
                   <TableCell>
