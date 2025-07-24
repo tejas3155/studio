@@ -1,6 +1,7 @@
 
 'use client';
 
+import * as React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -8,6 +9,7 @@ import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, L
 import { Bot, RefreshCw, SlidersHorizontal } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Skeleton } from '@/components/ui/skeleton';
 
 const forecastData = [
   { metric: "MRR", forecast: 250000, actual: 235000, variance: -6.0 },
@@ -24,6 +26,12 @@ const varianceChartData = [
 ];
 
 export default function ForecastVariancePage() {
+  const [isClient, setIsClient] = React.useState(false)
+
+  React.useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   return (
     <div className="space-y-6">
       <div>
@@ -49,14 +57,25 @@ export default function ForecastVariancePage() {
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {forecastData.map((item) => (
+                            {isClient ? forecastData.map((item) => (
                                 <TableRow key={item.metric}>
                                     <TableCell className="font-medium">{item.metric}</TableCell>
                                     <TableCell>{item.metric === 'MRR' ? `$${item.forecast.toLocaleString()}` : item.forecast.toLocaleString()}{item.metric.includes('Churn') || item.metric.includes('Margin') ? '%' : ''}</TableCell>
                                     <TableCell>{item.metric === 'MRR' ? `$${item.actual.toLocaleString()}` : item.actual.toLocaleString()}{item.metric.includes('Churn') || item.metric.includes('Margin') ? '%' : ''}</TableCell>
                                     <TableCell className={item.variance > 0 ? 'text-green-500' : 'text-red-500'}>{item.variance.toFixed(1)}%</TableCell>
                                 </TableRow>
-                            ))}
+                            )) : (
+                                <>
+                                {forecastData.map((item) => (
+                                <TableRow key={item.metric}>
+                                    <TableCell><Skeleton className="h-5 w-24" /></TableCell>
+                                    <TableCell><Skeleton className="h-5 w-20" /></TableCell>
+                                    <TableCell><Skeleton className="h-5 w-20" /></TableCell>
+                                    <TableCell><Skeleton className="h-5 w-16" /></TableCell>
+                                </TableRow>
+                                ))}
+                                </>
+                            )}
                         </TableBody>
                     </Table>
                 </CardContent>
