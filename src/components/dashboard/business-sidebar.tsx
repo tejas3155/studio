@@ -35,16 +35,22 @@ const menuItems = [
   {
     title: 'Tasks & Calendar',
     icon: ClipboardList,
+    href: '/dashboard/business/tasks',
+  },
+  {
+    title: 'Compliance',
+    icon: ShieldCheck,
     subItems: [
-      { title: 'Task Manager', href: '/dashboard/business/tasks' },
-      { title: 'Smart Calendar', href: '/dashboard/business/calendar' },
+        { title: 'Compliance Dashboard', href: '/dashboard/business/compliance' },
+        { title: 'Regulatory Tracker', href: '/dashboard/business/regulatory-tracker' },
+        { title: 'Vendor Risk Matrix', href: '/dashboard/business/vendor-matrix' },
     ],
   },
   {
     title: 'Revenue & Risks',
     icon: Wallet,
     subItems: [
-      { title: 'Revenue Risk Radar', href: '/dashboard/business/revenue-risk' },
+      { title: 'Revenue Risk', href: '/dashboard/business/revenue-risk' },
       { title: 'KPI Tracker', href: '/dashboard/business/kpi-tracker' },
       { title: 'Forecast Variance', href: '/dashboard/business/forecast-variance' },
     ],
@@ -54,7 +60,6 @@ const menuItems = [
     icon: HeartHandshake,
     subItems: [
       { title: 'Client Sentiment', href: '/dashboard/business/client-sentiment' },
-      { title: 'Vendor Evaluation', href: '/dashboard/business/vendor-evaluation' },
       { title: 'Contract Health', href: '/dashboard/business/contract-health' },
     ],
   },
@@ -101,11 +106,13 @@ export function BusinessSidebar() {
 
   return (
     <nav className="grid items-start px-4 text-sm font-medium">
-      <Accordion type="multiple" className="w-full" defaultValue={['Tasks & Calendar', 'Revenue & Risks', 'Clients & Vendors', 'Reports & Docs', 'AI Tools']}>
+      <Accordion type="multiple" className="w-full" defaultValue={['Compliance', 'Revenue & Risks', 'Clients & Vendors', 'Reports & Docs', 'AI Tools']}>
         {menuItems.map((item) =>
           item.subItems ? (
             <AccordionItem key={item.title} value={item.title} className="border-b-0">
-              <AccordionTrigger className="py-2 text-base hover:no-underline">
+              <AccordionTrigger
+                className="py-2 text-base hover:no-underline [&_svg.lucide-chevron-down]:h-5 [&_svg.lucide-chevron-down]:w-5"
+              >
                 <div className="flex items-center gap-3">
                   <item.icon className="h-5 w-5 transition-all group-hover:scale-110" />
                   {item.title}
