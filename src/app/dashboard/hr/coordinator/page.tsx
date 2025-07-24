@@ -5,6 +5,8 @@ import { Bot, Calendar, FileText, Handshake, Mic, PieChart, UserPlus, TrendingUp
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Skeleton } from "@/components/ui/skeleton";
 import * as React from 'react';
+import { Greeting } from "@/components/dashboard/greeting";
+import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
 
 const coreFeatures = [
   { name: "Smart Calendar", icon: Calendar, description: "Schedule interviews, offsites, and training sessions." },
@@ -64,8 +66,12 @@ export default function HrCoordinatorDashboard() {
   return (
     <div>
        <div className="mb-4">
-        <h1 className="text-2xl font-bold tracking-tight font-headline">HR Coordinator Dashboard</h1>
+        <Greeting />
         <p className="text-muted-foreground">Operational hub for HR tasks, document management, and AI-assisted workflows.</p>
+      </div>
+      
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
+        <CalendarWithTasks />
       </div>
 
       <Accordion type="multiple" defaultValue={['core', 'recruiting', 'analytics']} className="w-full space-y-4">

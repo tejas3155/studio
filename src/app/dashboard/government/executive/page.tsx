@@ -5,6 +5,8 @@ import { Bot, Gauge, Map, ShieldCheck, Siren, Target, Wallet, Scale } from "luci
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Skeleton } from "@/components/ui/skeleton";
 import * as React from 'react';
+import { Greeting } from "@/components/dashboard/greeting";
+import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
 
 const citizenServicesFeatures = [
   { name: "Grievance Heatmap", icon: Map, description: "Real-time map of citizen complaint density and sentiment." },
@@ -61,8 +63,12 @@ export default function GovernmentExecutiveDashboard() {
   return (
     <div>
       <div className="mb-4">
-        <h1 className="text-2xl font-bold tracking-tight font-headline">Executive Dashboard (Government)</h1>
+        <Greeting />
         <p className="text-muted-foreground">Strategic command center for policy impact, public sentiment, and scheme performance.</p>
+      </div>
+      
+       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
+        <CalendarWithTasks />
       </div>
 
       <Accordion type="multiple" defaultValue={['citizen', 'performance', 'strategic']} className="w-full space-y-4">

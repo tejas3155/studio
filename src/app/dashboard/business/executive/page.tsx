@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Skeleton } from "@/components/ui/skeleton";
 import { BarChart, Bot, LineChart, PieChart, Siren, Wallet, Waves, FileText } from "lucide-react";
+import { Greeting } from '@/components/dashboard/greeting';
+import { CalendarWithTasks } from '@/components/dashboard/calendar-with-tasks';
 
 const strategicFeatures = [
   { name: "Priority Alerts", icon: Siren },
@@ -61,11 +63,15 @@ const FeatureCard = ({ feature }: { feature: { name: string; icon: React.Element
 export default function BusinessExecutiveDashboard() {
   return (
     <div>
-      <div className="mb-4">
-        <h1 className="text-2xl font-bold tracking-tight font-headline">Executive Dashboard (Business)</h1>
-        <p className="text-muted-foreground">High-level overview of all strategic operations.</p>
-      </div>
+        <div className="mb-4">
+            <Greeting />
+            <p className="text-muted-foreground">High-level overview of all strategic operations.</p>
+        </div>
 
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
+            <CalendarWithTasks />
+        </div>
+      
       <Accordion type="multiple" defaultValue={['strategic', 'performance', 'risk']} className="w-full space-y-4">
         <AccordionItem value="strategic" className="border rounded-lg bg-card">
           <AccordionTrigger className="px-6 py-4">

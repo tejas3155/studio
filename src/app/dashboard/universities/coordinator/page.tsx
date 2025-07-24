@@ -5,6 +5,8 @@ import { BookCheck, Bot, Calendar, GanttChartSquare, GraduationCap, Mic, Present
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Skeleton } from "@/components/ui/skeleton";
 import * as React from 'react';
+import { Greeting } from "@/components/dashboard/greeting";
+import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
 
 const academicOpsFeatures = [
   { name: "Smart Calendar & AI Scheduler", icon: Calendar, description: "Manage faculty meetings, committees, and resolve scheduling conflicts automatically." },
@@ -63,8 +65,12 @@ export default function UniversityCoordinatorDashboard() {
   return (
     <div>
        <div className="mb-4">
-        <h1 className="text-2xl font-bold tracking-tight font-headline">Coordinator Dashboard (University)</h1>
+        <Greeting />
         <p className="text-muted-foreground">Operational hub for accreditation prep, faculty support, and grant management.</p>
+      </div>
+      
+       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
+        <CalendarWithTasks />
       </div>
 
       <Accordion type="multiple" defaultValue={['ops', 'compliance', 'support']} className="w-full space-y-4">

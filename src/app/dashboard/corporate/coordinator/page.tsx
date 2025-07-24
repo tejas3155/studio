@@ -5,6 +5,8 @@ import { Building2, Calendar, ClipboardCheck, FileText, Gauge, MicVocal, Search,
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Skeleton } from "@/components/ui/skeleton";
 import * as React from 'react';
+import { Greeting } from "@/components/dashboard/greeting";
+import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
 
 const operationsFeatures = [
   { name: "Smart Calendar", icon: Calendar, description: "Manage cross-departmental meetings." },
@@ -60,11 +62,15 @@ const FeatureCard = ({ feature }: { feature: { name: string; icon: React.Element
 export default function CorporateCoordinatorDashboard() {
   return (
     <div>
-       <div className="mb-4">
-        <h1 className="text-2xl font-bold tracking-tight font-headline">Coordinator Dashboard (Corporate)</h1>
-        <p className="text-muted-foreground">Oversee corporate operations, compliance, and cross-departmental workflows.</p>
-      </div>
+        <div className="mb-4">
+            <Greeting />
+            <p className="text-muted-foreground">Oversee corporate operations, compliance, and cross-departmental workflows.</p>
+        </div>
       
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
+            <CalendarWithTasks />
+        </div>
+
        <Accordion type="multiple" defaultValue={['operations', 'compliance', 'strategy']} className="w-full space-y-4">
         <AccordionItem value="operations" className="border rounded-lg bg-card">
           <AccordionTrigger className="px-6 py-4">

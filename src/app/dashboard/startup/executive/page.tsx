@@ -5,6 +5,8 @@ import { BarChart, Bot, DollarSign, FileText, PieChart, Rocket, Siren, Users, Tr
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Skeleton } from "@/components/ui/skeleton";
 import * as React from 'react';
+import { Greeting } from "@/components/dashboard/greeting";
+import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
 
 const priorityFeatures = [
   { name: "Priority Alerts", icon: Siren, description: "Critical issues needing immediate attention." },
@@ -65,8 +67,12 @@ export default function StartupExecutiveDashboard() {
   return (
     <div>
       <div className="mb-4">
-        <h1 className="text-2xl font-bold tracking-tight font-headline">Executive Dashboard (Startup)</h1>
+        <Greeting />
         <p className="text-muted-foreground">High-level overview of your startup's health and trajectory.</p>
+      </div>
+
+       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
+        <CalendarWithTasks />
       </div>
 
        <Accordion type="multiple" defaultValue={['priority', 'performance', 'strategic']} className="w-full space-y-4">

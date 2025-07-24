@@ -5,6 +5,8 @@ import { BarChart3, Bot, Briefcase, FilePieChart, GraduationCap, HandCoins, Shie
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Skeleton } from "@/components/ui/skeleton";
 import * as React from 'react';
+import { Greeting } from "@/components/dashboard/greeting";
+import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
 
 const institutionalHealthFeatures = [
   { name: "Accreditation Health Monitor", icon: ShieldCheck, description: "Compliance scorecard for accreditation standards (NAAC, NBA)." },
@@ -60,8 +62,12 @@ export default function UniversityExecutiveDashboard() {
   return (
     <div>
       <div className="mb-4">
-        <h1 className="text-2xl font-bold tracking-tight font-headline">Executive Dashboard (University)</h1>
+        <Greeting />
         <p className="text-muted-foreground">High-level insights on accreditation, research, faculty, and student success.</p>
+      </div>
+      
+       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
+        <CalendarWithTasks />
       </div>
 
        <Accordion type="multiple" defaultValue={['health', 'excellence', 'resources']} className="w-full space-y-4">
