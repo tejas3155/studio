@@ -73,16 +73,18 @@ export default function CorporateVendorRiskPage() {
                         <CardDescription>Vendors in the top-left are ideal (high performance, low risk).</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <ResponsiveContainer width="100%" height={300}>
-                            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-                                <CartesianGrid />
-                                <XAxis dataKey="performance" type="number" name="Performance Score" unit="%" domain={[70, 100]} />
-                                <YAxis dataKey="cost" type="number" name="Compliance Risk" unit="%" domain={[0, 30]}/>
-                                <ZAxis dataKey="name" type="category" name="Vendor" />
-                                <ChartTooltip cursor={{ strokeDasharray: '3 3' }} content={<ChartTooltipContent />} />
-                                <Scatter name="Vendors" data={chartData} fill="hsl(var(--primary))" />
-                            </ScatterChart>
-                        </ResponsiveContainer>
+                        <ChartContainer config={chartConfig} className="h-[300px] w-full">
+                            <ResponsiveContainer width="100%" height={300}>
+                                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+                                    <CartesianGrid />
+                                    <XAxis dataKey="performance" type="number" name="Performance Score" unit="%" domain={[70, 100]} />
+                                    <YAxis dataKey="cost" type="number" name="Compliance Risk" unit="%" domain={[0, 30]}/>
+                                    <ZAxis dataKey="name" type="category" name="Vendor" />
+                                    <ChartTooltip cursor={{ strokeDasharray: '3 3' }} content={<ChartTooltipContent />} />
+                                    <Scatter name="Vendors" data={chartData} fill="hsl(var(--primary))" />
+                                </ScatterChart>
+                            </ResponsiveContainer>
+                        </ChartContainer>
                     </CardContent>
                 </Card>
             </div>
