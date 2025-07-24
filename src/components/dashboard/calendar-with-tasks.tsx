@@ -13,8 +13,13 @@ const mockTasks: { [key: string]: string[] } = {
 };
 
 export function CalendarWithTasks() {
-  const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const [date, setDate] = React.useState<Date | undefined>(undefined);
   const [tasks, setTasks] = React.useState<string[] | null>(null);
+
+  React.useEffect(() => {
+    // Set the initial date only on the client
+    setDate(new Date());
+  }, []);
 
   React.useEffect(() => {
     // This effect runs only on the client after hydration
@@ -41,6 +46,8 @@ export function CalendarWithTasks() {
                         head_row: "w-full flex justify-around",
                         row: "w-full flex justify-around mt-2",
                     }}
+                    disabled={(date) => date < new Date("1900-01-01")}
+                    initialFocus
                 />
             </CardContent>
         </Card>
@@ -51,7 +58,7 @@ export function CalendarWithTasks() {
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                {tasks === null ? (
+                {tasks === null || !date ? (
                     <div className="space-y-2">
                         <Skeleton className="h-4 w-3/4" />
                         <Skeleton className="h-4 w-1/2" />
