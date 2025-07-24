@@ -14,6 +14,7 @@ import {
   ShieldCheck,
   Users,
   Wallet,
+  ClipboardList,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
@@ -45,7 +46,7 @@ const menuItems = [
     subItems: [
       { title: 'Tasks & Meetings', href: '/dashboard/corporate/tasks' },
       { title: 'Department Heatmaps', href: '/dashboard/corporate/heatmaps' },
-      { title: 'SOP Tracker', href: '/dashboard/corporate/sops' },
+      { title: 'SOP Tracker', href: '/dashboard/corporate/sop-tracker' },
     ],
   },
   {
@@ -63,7 +64,7 @@ const menuItems = [
     icon: FileText,
     subItems: [
       { title: 'Contract Summarizer', href: '/dashboard/corporate/contracts' },
-      { title: "Policy Hub", href: "/dashboard/corporate/policies" },
+      { title: "Policy Hub", href: "/dashboard/corporate/policy-hub" },
     ],
   },
    {
@@ -100,9 +101,11 @@ export function CorporateSidebar() {
         {menuItems.map((item) =>
           item.subItems ? (
             <AccordionItem key={item.title} value={item.title} className="border-b-0">
-              <AccordionTrigger className="py-2 text-base hover:no-underline">
+              <AccordionTrigger
+                className="py-2 text-base hover:no-underline [&_svg]:h-5 [&_svg]:w-5"
+              >
                 <div className="flex items-center gap-3">
-                  <item.icon className="h-5 w-5 transition-all group-hover:scale-110" />
+                  <item.icon className="transition-all group-hover:scale-110" />
                   {item.title}
                 </div>
               </AccordionTrigger>
