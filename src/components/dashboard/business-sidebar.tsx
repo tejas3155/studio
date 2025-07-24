@@ -105,7 +105,7 @@ export function BusinessSidebar() {
         {menuItems.map((item) =>
           item.subItems ? (
             <AccordionItem key={item.title} value={item.title} className="border-b-0">
-              <AccordionTrigger className="py-2 text-base hover:no-underline [&[data-state=open]>div>svg]:-rotate-180">
+              <AccordionTrigger className="py-2 text-base hover:no-underline">
                 <div className="flex items-center gap-3">
                   <item.icon className="h-5 w-5 transition-all group-hover:scale-110" />
                   {item.title}
