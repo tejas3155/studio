@@ -7,6 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import * as React from 'react';
 import { Greeting } from "@/components/dashboard/greeting";
 import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
+import { AiDailyBriefing } from "@/components/dashboard/ai-daily-briefing";
 
 const operationsFeatures = [
   { name: "Task Management", icon: Calendar, description: "Manage tasks from voice notes, meetings, etc." },
@@ -71,9 +72,12 @@ export default function StartupCoordinatorDashboard() {
         <p className="text-muted-foreground">Operational hub for execution, document management, and AI-assisted workflows.</p>
       </div>
 
-       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
-        <CalendarWithTasks />
-      </div>
+       <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3 mb-6">
+            <div className="lg:col-span-2">
+                <CalendarWithTasks />
+            </div>
+            <AiDailyBriefing />
+       </div>
 
       <Accordion type="multiple" defaultValue={['operations', 'growth', 'corporate']} className="w-full space-y-4">
         <AccordionItem value="operations" className="border rounded-lg bg-card">

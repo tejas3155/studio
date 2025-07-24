@@ -66,9 +66,11 @@ export default function UniversityExecutiveDashboard() {
         <p className="text-muted-foreground">High-level insights on accreditation, research, faculty, and student success.</p>
       </div>
       
-       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
-        <CalendarWithTasks />
-      </div>
+       <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3 mb-6">
+            <div className="lg:col-span-2">
+                <CalendarWithTasks />
+            </div>
+       </div>
 
        <Accordion type="multiple" defaultValue={['health', 'excellence', 'resources']} className="w-full space-y-4">
         <AccordionItem value="health" className="border rounded-lg bg-card">

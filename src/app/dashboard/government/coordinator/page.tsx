@@ -7,6 +7,7 @@ import * as React from 'react';
 import { Bot, Calendar, FileText, Handshake, Mic, PieChart, Rocket, Siren, UserPlus, TrendingUp, DollarSign, BarChart3, ShieldCheck, Briefcase, Archive, Scale, Megaphone, Flag, Map } from "lucide-react";
 import { Greeting } from "@/components/dashboard/greeting";
 import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
+import { AiDailyBriefing } from "@/components/dashboard/ai-daily-briefing";
 
 const operationsFeatures = [
   { name: "File Tracker", icon: Archive, description: "Log and monitor physical and digital file movements between departments." },
@@ -71,8 +72,11 @@ export default function GovernmentCoordinatorDashboard() {
         <p className="text-muted-foreground">Operational hub for file management, public communication, and scheme tracking.</p>
       </div>
       
-       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
-        <CalendarWithTasks />
+       <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3 mb-6">
+            <div className="lg:col-span-2">
+                <CalendarWithTasks />
+            </div>
+            <AiDailyBriefing />
       </div>
       
       <Accordion type="multiple" defaultValue={['operations', 'public', 'management']} className="w-full space-y-4">

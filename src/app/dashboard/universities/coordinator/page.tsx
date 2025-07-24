@@ -7,6 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import * as React from 'react';
 import { Greeting } from "@/components/dashboard/greeting";
 import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
+import { AiDailyBriefing } from "@/components/dashboard/ai-daily-briefing";
 
 const academicOpsFeatures = [
   { name: "Smart Calendar & AI Scheduler", icon: Calendar, description: "Manage faculty meetings, committees, and resolve scheduling conflicts automatically." },
@@ -69,9 +70,12 @@ export default function UniversityCoordinatorDashboard() {
         <p className="text-muted-foreground">Operational hub for accreditation prep, faculty support, and grant management.</p>
       </div>
       
-       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
-        <CalendarWithTasks />
-      </div>
+       <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3 mb-6">
+            <div className="lg:col-span-2">
+                <CalendarWithTasks />
+            </div>
+            <AiDailyBriefing />
+       </div>
 
       <Accordion type="multiple" defaultValue={['ops', 'compliance', 'support']} className="w-full space-y-4">
         <AccordionItem value="ops" className="border rounded-lg bg-card">

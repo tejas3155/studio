@@ -66,8 +66,10 @@ export default function HrExecutiveDashboard() {
         <p className="text-muted-foreground">Strategic workforce insights, compliance risks, and culture analytics.</p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
-        <CalendarWithTasks />
+      <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3 mb-6">
+        <div className="lg:col-span-2">
+            <CalendarWithTasks />
+        </div>
       </div>
 
       <Accordion type="multiple" defaultValue={['talent', 'performance', 'org']} className="w-full space-y-4">

@@ -4,6 +4,7 @@
 import * as React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar } from '@/components/ui/calendar';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const mockTasks: { [key: string]: string[] } = {
   '2024-08-15': ['Quarterly Review with Sales Team', 'Finalize budget proposal'],
@@ -13,9 +14,10 @@ const mockTasks: { [key: string]: string[] } = {
 
 export function CalendarWithTasks() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
-  const [tasks, setTasks] = React.useState<string[]>([]);
+  const [tasks, setTasks] = React.useState<string[] | null>(null);
 
   React.useEffect(() => {
+    // This effect runs only on the client after hydration
     if (date) {
       const dateString = date.toISOString().split('T')[0];
       setTasks(mockTasks[dateString] || []);
@@ -23,7 +25,7 @@ export function CalendarWithTasks() {
   }, [date]);
 
   return (
-    <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card>
             <CardContent className="p-0">
                  <Calendar
@@ -49,7 +51,12 @@ export function CalendarWithTasks() {
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                {tasks.length > 0 ? (
+                {tasks === null ? (
+                    <div className="space-y-2">
+                        <Skeleton className="h-4 w-3/4" />
+                        <Skeleton className="h-4 w-1/2" />
+                    </div>
+                ) : tasks.length > 0 ? (
                 <ul className="space-y-2 list-disc list-inside">
                     {tasks.map((task, index) => (
                     <li key={index}>{task}</li>

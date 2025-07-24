@@ -67,8 +67,10 @@ export default function GovernmentExecutiveDashboard() {
         <p className="text-muted-foreground">Strategic command center for policy impact, public sentiment, and scheme performance.</p>
       </div>
       
-       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
-        <CalendarWithTasks />
+       <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3 mb-6">
+            <div className="lg:col-span-2">
+                <CalendarWithTasks />
+            </div>
       </div>
 
       <Accordion type="multiple" defaultValue={['citizen', 'performance', 'strategic']} className="w-full space-y-4">

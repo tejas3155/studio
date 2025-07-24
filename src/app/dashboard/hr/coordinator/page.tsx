@@ -7,6 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import * as React from 'react';
 import { Greeting } from "@/components/dashboard/greeting";
 import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
+import { AiDailyBriefing } from "@/components/dashboard/ai-daily-briefing";
 
 const coreFeatures = [
   { name: "Smart Calendar", icon: Calendar, description: "Schedule interviews, offsites, and training sessions." },
@@ -70,8 +71,11 @@ export default function HrCoordinatorDashboard() {
         <p className="text-muted-foreground">Operational hub for HR tasks, document management, and AI-assisted workflows.</p>
       </div>
       
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
-        <CalendarWithTasks />
+      <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3 mb-6">
+        <div className="lg:col-span-2">
+            <CalendarWithTasks />
+        </div>
+        <AiDailyBriefing />
       </div>
 
       <Accordion type="multiple" defaultValue={['core', 'recruiting', 'analytics']} className="w-full space-y-4">

@@ -7,6 +7,7 @@ import * as React from 'react';
 import { BarChart3, Bot, Calendar, HeartHandshake, Mic, Siren, TrendingUp, Wallet, FileText, Users } from "lucide-react";
 import { Greeting } from "@/components/dashboard/greeting";
 import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
+import { AiDailyBriefing } from "@/components/dashboard/ai-daily-briefing";
 
 const operationalFeatures = [
   { name: "Priority Alerts", icon: Siren },
@@ -73,8 +74,11 @@ export default function BusinessCoordinatorDashboard() {
             <p className="text-muted-foreground">Manage day-to-day operations and team coordination.</p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
-            <CalendarWithTasks />
+        <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3 mb-6">
+            <div className="lg:col-span-2">
+                <CalendarWithTasks />
+            </div>
+            <AiDailyBriefing />
         </div>
 
        <Accordion type="multiple" defaultValue={['operational', 'financial', 'client']} className="w-full space-y-4">

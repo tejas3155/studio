@@ -7,6 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import * as React from 'react';
 import { Greeting } from "@/components/dashboard/greeting";
 import { CalendarWithTasks } from "@/components/dashboard/calendar-with-tasks";
+import { AiDailyBriefing } from "@/components/dashboard/ai-daily-briefing";
 
 const operationsFeatures = [
   { name: "Smart Calendar", icon: Calendar, description: "Manage cross-departmental meetings." },
@@ -67,8 +68,11 @@ export default function CorporateCoordinatorDashboard() {
             <p className="text-muted-foreground">Oversee corporate operations, compliance, and cross-departmental workflows.</p>
         </div>
       
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
-            <CalendarWithTasks />
+        <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3 mb-6">
+             <div className="lg:col-span-2">
+                <CalendarWithTasks />
+            </div>
+            <AiDailyBriefing />
         </div>
 
        <Accordion type="multiple" defaultValue={['operations', 'compliance', 'strategy']} className="w-full space-y-4">

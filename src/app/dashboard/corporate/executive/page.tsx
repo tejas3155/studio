@@ -66,8 +66,10 @@ export default function CorporateExecutiveDashboard() {
         <p className="text-muted-foreground">High-level overview of corporate strategy, risk, and compliance.</p>
       </div>
       
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-6">
-        <CalendarWithTasks />
+      <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3 mb-6">
+        <div className="lg:col-span-2">
+            <CalendarWithTasks />
+        </div>
       </div>
 
        <Accordion type="multiple" defaultValue={['overview', 'performance', 'strategic']} className="w-full space-y-4">
