@@ -1,9 +1,10 @@
 
 import { GovernmentSidebar } from '@/components/dashboard/government-sidebar';
+import { UserNav } from '@/components/dashboard/user-nav';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { Bell, Menu, Search, UserCircle } from 'lucide-react';
+import { Bell, Menu, Search } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Input } from '@/components/ui/input';
 
@@ -62,10 +63,7 @@ export default function GovernmentDashboardLayout({
             <Bell className="h-5 w-5" />
             <span className="sr-only">Toggle notifications</span>
           </Button>
-          <Button variant="outline" size="icon" className="shrink-0">
-            <UserCircle className="h-5 w-5" />
-            <span className="sr-only">Toggle user menu</span>
-          </Button>
+          <UserNav />
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 bg-secondary">
           {children}
