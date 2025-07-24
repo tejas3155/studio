@@ -1,4 +1,6 @@
 
+'use client';
+
 import { Separator } from "@/components/ui/separator";
 import { SidebarNav } from "@/components/settings/sidebar-nav";
 import { AccountSettings } from "@/components/settings/account";
@@ -8,9 +10,14 @@ import { IntegrationsSettings } from "@/components/settings/integrations";
 import { BillingSettings } from "@/components/settings/billing";
 import { SecuritySettings } from "@/components/settings/security";
 import { AdvancedSettings } from "@/components/settings/advanced";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 
 export default function SettingsPage({ searchParams }: { searchParams: { tab: string } }) {
+
+    const router = useRouter();
 
     const sidebarNavItems = [
       {
@@ -47,11 +54,17 @@ export default function SettingsPage({ searchParams }: { searchParams: { tab: st
 
   return (
     <div className="space-y-6 p-4 md:p-10 pb-16 block">
-      <div className="space-y-0.5">
-        <h2 className="text-2xl font-bold tracking-tight">Settings</h2>
-        <p className="text-muted-foreground">
-          Manage your account settings and set e-mail preferences.
-        </p>
+      <div className="flex items-center gap-4">
+        <Button variant="outline" size="icon" onClick={() => router.back()}>
+            <ArrowLeft className="h-4 w-4" />
+            <span className="sr-only">Back</span>
+        </Button>
+        <div className="space-y-0.5">
+            <h2 className="text-2xl font-bold tracking-tight">Settings</h2>
+            <p className="text-muted-foreground">
+            Manage your account settings and set e-mail preferences.
+            </p>
+        </div>
       </div>
       <Separator className="my-6" />
       <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
