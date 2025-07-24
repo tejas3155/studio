@@ -10,14 +10,15 @@ import { IntegrationsSettings } from "@/components/settings/integrations";
 import { BillingSettings } from "@/components/settings/billing";
 import { SecuritySettings } from "@/components/settings/security";
 import { AdvancedSettings } from "@/components/settings/advanced";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
 
-export default function SettingsPage({ searchParams }: { searchParams: { tab: string } }) {
+export default function SettingsPage() {
 
     const router = useRouter();
+    const searchParams = useSearchParams();
 
     const sidebarNavItems = [
       {
@@ -50,7 +51,7 @@ export default function SettingsPage({ searchParams }: { searchParams: { tab: st
       },
     ]
 
-    const activeTab = searchParams.tab || "account";
+    const activeTab = searchParams.get("tab") || "account";
 
   return (
     <div className="space-y-6 p-4 md:p-10 pb-16 block">
