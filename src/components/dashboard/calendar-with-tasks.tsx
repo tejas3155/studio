@@ -13,21 +13,45 @@ const mockTasks: { [key: string]: string[] } = {
 };
 
 export function CalendarWithTasks() {
-  const [date, setDate] = React.useState<Date | undefined>(undefined);
+  const [date, setDate] = React.useState<Date | undefined>(new Date());
   const [tasks, setTasks] = React.useState<string[] | null>(null);
+  const [isClient, setIsClient] = React.useState(false);
 
   React.useEffect(() => {
-    // Set the initial date only on the client
-    setDate(new Date());
+    setIsClient(true);
   }, []);
 
   React.useEffect(() => {
-    // This effect runs only on the client after hydration
     if (date) {
       const dateString = date.toISOString().split('T')[0];
       setTasks(mockTasks[dateString] || []);
     }
   }, [date]);
+
+  if (!isClient) {
+    return (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card>
+                <CardContent className="p-0">
+                    <Skeleton className="h-[290px] w-full" />
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader>
+                    <CardTitle>
+                        <Skeleton className="h-6 w-32" />
+                    </CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div className="space-y-2">
+                        <Skeleton className="h-4 w-3/4" />
+                        <Skeleton className="h-4 w-1/2" />
+                    </div>
+                </CardContent>
+            </Card>
+        </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
